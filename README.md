@@ -18,10 +18,15 @@ php vendor/bin/phpbench run benchmark/Bitbucket_Symfony.php --report=aggregate
 
 This is the list of the available benchmarks
 
-| File | Package | Strategy |
-|------|---------|----------|
-| benchmark/Bitbucket_Symfony.php | [symfony/routing](https://github.com/symfony/routing) | `Symfony\Component\Routing\Matcher\UrlMatcher` |
+| Package | File | Strategy |
+|---------|------|----------|
+| [symfony/routing](https://github.com/symfony/routing) | benchmark/Bitbucket_Symfony.php | `Symfony\Component\Routing\Matcher\UrlMatcher` |
 
+The benchmark cases are:
+
+* **benchLast** match the last route in the list of routing definitions, as this is considered the worst case
+* **benchLongest** match the longest route to test the complexity of parsing bigger paths
+* **benchAll** match all of the routes from the list of routing definitions to average the overall performance 
 
 # Routes
 
@@ -29,6 +34,7 @@ All the routes for this benchmark are read from this address:
 https://developer.atlassian.com/bitbucket/api/2/reference/resource/
 
 Only the paths are used, and the HTTP verbs/methods are ignored.
+
 You can see the list of paths in [bitbucket-routes.txt](bitbucket-routes.txt):
 
 ```
@@ -52,3 +58,5 @@ There are a few scripts to assist with some of the grunt work:
 
 * [scripts/download-bitbucket-routes.php](scripts/download-bitbucket-routes.php):
 	downloads the path definitions from [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) page
+* [scripts/generate-routes.php](scripts/generate-routes.php):
+	generates the routes definitions for the packages, as well as the expected results
