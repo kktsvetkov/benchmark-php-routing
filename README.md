@@ -19,7 +19,7 @@ php vendor/bin/phpbench run benchmark/Bitbucket_Symfony.php --report=aggregate
 This is the list of the available benchmarks
 
 | File                            | Class             | Package\Strategy                                     |
-+---------------------------------+-------------------+------------------------------------------------------+
+|---------------------------------|-------------------|------------------------------------------------------|
 | benchmark/Bitbucket_Symfony.php | Bitbucket_Symfony | Using `Symfony\Component\Routing\Matcher\UrlMatcher` |
 
 
