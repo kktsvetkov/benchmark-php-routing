@@ -69,3 +69,5 @@ There are a few scripts to assist with some of the grunt work:
 	downloads the path definitions from [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) page
 * [scripts/generate-routes.php](scripts/generate-routes.php):
 	generates the routes definitions for the packages, as well as the expected results
+* [scripts/quick-benchmark.php](scripts/quick-benchmark.php):
+	runs the benchmark cases to calculate number of matches per second (more is better)
