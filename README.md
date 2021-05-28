@@ -8,6 +8,10 @@ files like this:
 ```sh
 php vendor/bin/phpbench run benchmark/Bitbucket_Symfony.php --report=aggregate
 ```
+Or you can run all of the benchmarks at once
+```sh
+php vendor/bin/phpbench run --report=aggregate
+```
 
 # Packages
 
@@ -25,7 +29,7 @@ This is the list of the available benchmarks
 | [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` |
 | [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` |
 | [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` |
-
+| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` |
 
 The benchmark cases are:
 
