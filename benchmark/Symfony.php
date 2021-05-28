@@ -6,7 +6,7 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 
-class Bitbucket_Symfony extends Bitbucket_Abstract
+class Symfony extends Benchmark
 {
 	function runRouting(string $route) : array
 	{

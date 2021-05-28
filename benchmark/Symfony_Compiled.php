@@ -9,7 +9,7 @@ use Symfony\Component\Routing\RouteCollection;
 
 use function file_put_contents;
 
-class Bitbucket_Symfony_Compiled extends Bitbucket_Abstract
+class Symfony_Compiled extends Benchmark
 {
 	protected $cached_routes = '/tmp/benchmark-symfony-compiled-routes.php';
 

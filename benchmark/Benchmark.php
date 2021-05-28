@@ -5,7 +5,7 @@ namespace Benchmark_Routing;
 /**
 * Benchmark routing the Bitbucket API paths
 */
-abstract class Bitbucket_Abstract
+abstract class Benchmark
 {
 	abstract function runRouting(string $route) : array;
 
@@ -53,7 +53,7 @@ abstract class Bitbucket_Abstract
 	* @Revs(10)
 	* @Iterations(1)
 	*/
-	function benchAll()
+	function XbenchAll()
 	{
 		$routes = $this->getRoutes();
 		foreach ($routes as $params)

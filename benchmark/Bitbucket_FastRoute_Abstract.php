@@ -5,7 +5,7 @@ namespace Benchmark_Routing;
 use FastRoute\RouteCollector;
 use function FastRoute\simpleDispatcher;
 
-abstract class Bitbucket_FastRoute_Abstract extends Bitbucket_Abstract
+abstract class Bitbucket_FastRoute_Abstract extends Benchmark
 {
 	protected $dataGeneratorClass;
 	protected $dispatcherClass;
@@ -24,7 +24,5 @@ abstract class Bitbucket_FastRoute_Abstract extends Bitbucket_Abstract
 	function loadRoutes(RouteCollector $routes)
 	{
 		include __DIR__ . '/fastroute-routes.php';
-		// $routes->addRoute('GET', '/addon', ['_route' => 'addon']);
-		// $routes->addRoute('GET', '/addon/linkers', ['_route' => 'addon_linkers']);
 	}
 }
