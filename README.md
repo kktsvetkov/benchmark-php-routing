@@ -21,12 +21,14 @@ This is the list of the available benchmarks
 | Package | File | Strategy |
 |---------|------|----------|
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Bitbucket_Symfony.php | `Symfony\Component\Routing\Matcher\UrlMatcher` |
+| [symfony/routing](https://github.com/symfony/routing) | benchmark/Bitbucket_Symfony_Compiled.php | `Symfony\Component\Routing\Matcher\CompiledUrlMatcher` |
+
 
 The benchmark cases are:
 
-* **benchLast** match the last route in the list of routing definitions, as this is considered the worst case
-* **benchLongest** match the longest route to test the complexity of parsing bigger paths
-* **benchAll** match all of the routes from the list of routing definitions to average the overall performance 
+* **benchLast** -- match the last route in the list of routing definitions, as this is considered the worst case
+* **benchLongest** -- match the longest route to test the complexity of parsing bigger paths
+* **benchAll** -- match all of the routes from the list of routing definitions to average the overall performance
 
 # Routes
 

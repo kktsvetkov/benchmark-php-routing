@@ -55,7 +55,7 @@ abstract class Bitbucket_Abstract
 	* @Revs(10)
 	* @Iterations(5)
 	*/
-	function XbenchAll()
+	function benchAll()
 	{
 		$routes = $this->getRoutes();
 		foreach ($routes as $params)
