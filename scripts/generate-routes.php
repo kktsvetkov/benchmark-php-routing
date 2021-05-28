@@ -2,6 +2,7 @@
 
 $txt = __DIR__ . '/../bitbucket-routes.txt';
 $symfony_routes = __DIR__ . '/../benchmark/symfony-routes.php';
+$fastroute_routes = __DIR__ . '/../benchmark/fastroute-routes.php';
 $result_routes = __DIR__ . '/../benchmark/result-routes.php';
 
 $vars = ['john', 'paul', 'george', 'ringo'];
@@ -21,6 +22,11 @@ while ($r = fgets($fp))
 	* $routes->add('workspaces', new Route('/workspaces'));
 	*/
 	$symfony[] = "\$routes->add('{$name}', new Route('{$r}'));";
+
+	/*
+	* $routes->addRoute('GET', '/addon', ['_route' => 'addon']);
+	*/
+	$fast[] = "\$routes->addRoute('GET', '{$r}', ['_route' => '{$name}']);";
 
 	$m = $r;
 	$result = "['_route' => '{$name}'";
@@ -62,6 +68,13 @@ file_put_contents($symfony_routes, '<?php '
 	. "\n"
 	);
 printf("%s done.\n", basename($symfony_routes));
+
+file_put_contents($fastroute_routes, '<?php '
+	. "\n"
+	. "\n" . join("\n", $fast)
+	. "\n"
+	);
+printf("%s done.\n", basename($fastroute_routes));
 
 file_put_contents($result_routes, '<?php '
 	. "\n"

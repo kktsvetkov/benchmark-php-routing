@@ -11,7 +11,6 @@ abstract class Bitbucket_Abstract
 
 	/**
 	* @ParamProviders("getLastRoute")
-	* @Warmup(2)
 	* @Revs(100)
 	* @Iterations(5)
 	*/
@@ -30,7 +29,6 @@ abstract class Bitbucket_Abstract
 
 	/**
 	* @ParamProviders("getLongestRoute")
-	* @Warmup(2)
 	* @Revs(100)
 	* @Iterations(5)
 	*/
@@ -53,7 +51,7 @@ abstract class Bitbucket_Abstract
 
 	/**
 	* @Revs(10)
-	* @Iterations(5)
+	* @Iterations(1)
 	*/
 	function benchAll()
 	{

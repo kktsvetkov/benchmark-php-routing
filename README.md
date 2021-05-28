@@ -22,6 +22,7 @@ This is the list of the available benchmarks
 |---------|------|----------|
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Bitbucket_Symfony.php | `Symfony\Component\Routing\Matcher\UrlMatcher` |
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Bitbucket_Symfony_Compiled.php | `Symfony\Component\Routing\Matcher\CompiledUrlMatcher` |
+| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` |
 
 
 The benchmark cases are:
