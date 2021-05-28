@@ -20,7 +20,7 @@ This is the list of the available benchmarks
 
 | File | Package | Strategy |
 |------|---------|----------|
-| benchmark/Bitbucket_Symfony.php | Symfony Routing [symfony/routing](https://github.com/symfony/routing) |  `Symfony\Component\Routing\Matcher\UrlMatcher` |
+| benchmark/Bitbucket_Symfony.php | [symfony/routing](https://github.com/symfony/routing) | `Symfony\Component\Routing\Matcher\UrlMatcher` |
 
 
 # Routes
