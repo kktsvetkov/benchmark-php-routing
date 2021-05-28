@@ -82,7 +82,7 @@ Here's the inaugural run of that script, and as you can see
 Symfony's Compiled URL Matching is 3x to 10x faster than the
 rest.
 
-```sh
+```
 ~/github.benchmark-php-routing/php scripts/quick-benchmark.php
  18/18 [============================] 100%
 +------------------+--------------+--------+-------------------+-----------------+
