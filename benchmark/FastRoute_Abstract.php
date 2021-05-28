@@ -5,7 +5,7 @@ namespace Benchmark_Routing;
 use FastRoute\RouteCollector;
 use function FastRoute\simpleDispatcher;
 
-abstract class Bitbucket_FastRoute_Abstract extends Benchmark
+abstract class FastRoute_Abstract extends Benchmark
 {
 	protected $dataGeneratorClass;
 	protected $dispatcherClass;

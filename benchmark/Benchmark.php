@@ -53,7 +53,7 @@ abstract class Benchmark
 	* @Revs(10)
 	* @Iterations(1)
 	*/
-	function XbenchAll()
+	function benchAll()
 	{
 		$routes = $this->getRoutes();
 		foreach ($routes as $params)

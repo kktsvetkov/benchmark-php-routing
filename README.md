@@ -26,10 +26,10 @@ This is the list of the available benchmarks
 |---------|------|----------|
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony.php | `Symfony\Component\Routing\Matcher\UrlMatcher` |
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony_Compiled.php | `Symfony\Component\Routing\Matcher\CompiledUrlMatcher` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/Bitbucket_FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` |
+| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` |
+| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` |
+| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` |
+| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` |
 
 The benchmark cases are:
 
