@@ -1,0 +1,17 @@
+{
+	"name": "kktsvetkov/benchmark-php-routing",
+	"description": "Benchmark PHP Routing",
+	"autoload":
+	{
+		"psr-4":
+		{
+			"Benchmark_Routing\\": "benchmark/"
+		}
+	},
+
+	"require": {
+		"phpbench/phpbench": "^0.16.10",
+		"symfony/routing": "^4.4",
+		"nikic/fast-route": "^1.3"
+	}
+}
