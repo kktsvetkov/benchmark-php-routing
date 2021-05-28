@@ -71,3 +71,40 @@ There are a few scripts to assist with some of the grunt work:
 	generates the routes definitions for the packages, as well as the expected results
 * [scripts/quick-benchmark.php](scripts/quick-benchmark.php):
 	runs the benchmark cases to calculate number of matches per second (more is better)
+
+# Quick Benchmark
+
+In addition to the phpbench cases, I've also created a script that will run all
+of the scenarios against all of the packages and strategies, and calculate the
+number of routes matched per second. The results are then sorted by that data.
+
+Here's the inaugural run of that script, and as you can see
+Symfony's Compiled URL Matching is 3x to 10x faster than the
+rest.
+
+```sh
+~/github.benchmark-php-routing/php scripts/quick-benchmark.php
+ 18/18 [============================] 100%
++------------------+--------------+--------+-------------------+-----------------+
+| Case             | Scenario     | Routes | Time              | Per Second      |
++------------------+--------------+--------+-------------------+-----------------+
+| symfony_compiled | benchAll     | 364    | 0.817477 seconds  | 445.27247300544 |
+| symfony_compiled | benchLast    | 200    | 1.970871 seconds  | 101.47797743936 |
+| symfony_compiled | benchLongest | 200    | 1.978635 seconds  | 101.07979326656 |
+| fast_mark        | benchAll     | 364    | 8.570551 seconds  | 42.471014212756 |
+| fast_char_count  | benchAll     | 364    | 8.647037 seconds  | 42.095344193395 |
+| fast_group_pos   | benchAll     | 364    | 8.709944 seconds  | 41.791313421905 |
+| fast_group_count | benchAll     | 364    | 8.883532 seconds  | 40.974693180939 |
+| symfony          | benchAll     | 364    | 10.287461 seconds | 35.382880041987 |
+| fast_mark        | benchLast    | 200    | 6.180378 seconds  | 32.360480424948 |
+| fast_group_pos   | benchLast    | 200    | 6.241153 seconds  | 32.045360840023 |
+| fast_group_pos   | benchLongest | 200    | 6.244522 seconds  | 32.028071478664 |
+| fast_char_count  | benchLongest | 200    | 6.324598 seconds  | 31.622562835016 |
+| fast_mark        | benchLongest | 200    | 6.424930 seconds  | 31.128743351575 |
+| fast_group_count | benchLongest | 200    | 6.459257 seconds  | 30.963312979051 |
+| fast_group_count | benchLast    | 200    | 6.541316 seconds  | 30.574887225916 |
+| symfony          | benchLongest | 200    | 6.764358 seconds  | 29.566737702055 |
+| symfony          | benchLast    | 200    | 7.047871 seconds  | 28.377364393312 |
+| fast_char_count  | benchLast    | 200    | 7.467640 seconds  | 26.782223307453 |
++------------------+--------------+--------+-------------------+-----------------+
+```

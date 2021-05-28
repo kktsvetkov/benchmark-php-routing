@@ -15,7 +15,7 @@ class quick_benchmark
 		'fast_group_count' => \Benchmark_Routing\FastRoute_GroupCountBased::class,
 		);
 
-	const repeats = 200;
+	const repeats = 300;
 
 	const scenario = array(
 		'benchAll' => [182, 2], /* total number of routes */
