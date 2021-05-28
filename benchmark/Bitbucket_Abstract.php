@@ -4,10 +4,6 @@ namespace Benchmark_Routing;
 
 /**
 * Benchmark routing the Bitbucket API paths
-*
-* @Warmup(2)
-* @Revs(100)
-* @Iterations(5)
 */
 abstract class Bitbucket_Abstract
 {
@@ -15,6 +11,9 @@ abstract class Bitbucket_Abstract
 
 	/**
 	* @ParamProviders("getLastRoute")
+	* @Warmup(2)
+	* @Revs(100)
+	* @Iterations(5)
 	*/
 	function benchLast(array $last)
 	{
@@ -31,6 +30,9 @@ abstract class Bitbucket_Abstract
 
 	/**
 	* @ParamProviders("getLongestRoute")
+	* @Warmup(2)
+	* @Revs(100)
+	* @Iterations(5)
 	*/
 	function benchLongest(array $longest)
 	{
@@ -50,10 +52,10 @@ abstract class Bitbucket_Abstract
 	}
 
 	/**
-	* @Warmup(0)
 	* @Revs(10)
+	* @Iterations(5)
 	*/
-	function benchAll()
+	function XbenchAll()
 	{
 		$routes = $this->getRoutes();
 		foreach ($routes as $params)
@@ -70,9 +72,6 @@ abstract class Bitbucket_Abstract
 
 	function getRoutes() : array
 	{
-		return array(
-			['route' => '/addon', 'result' => ['_route' => 'addon']],
-			['route' => '/addon/linkers', 'result' => ['_route' => 'addon_linkers']],
-		);
+		return include __DIR__ . '/result-routes.php';
 	}
 }

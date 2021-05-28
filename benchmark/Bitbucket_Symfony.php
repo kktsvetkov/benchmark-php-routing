@@ -21,11 +21,6 @@ class Bitbucket_Symfony extends Bitbucket_Abstract
 
 	function loadedRoutes() : RouteCollection
 	{
-		$routes = new RouteCollection();
-
-		$routes->add('addon', new Route('/addon'));
-		$routes->add('addon_linkers', new Route('/addon/linkers'));
-
-		return $routes;
+		return include __DIR__ . '/symfony-routes.php';
 	}
 }
