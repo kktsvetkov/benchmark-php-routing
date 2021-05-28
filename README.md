@@ -2,18 +2,34 @@
 
 Take a real world routing scenario in the form of [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) and benchmark PHP routing packages against it.
 
+To run the benchmarks, first you have to run `composer update` to get all of the
+packages and their dependencies. After that, you can execute any of benchmark
+files like this:
+```sh
+php vendor/bin/phpbench run benchmark/Bitbucket_Symfony.php --report=aggregate
+```
+
 # Packages
 
 * Symfony Routing [symfony/routing](https://github.com/symfony/routing)
 * Fast Route [nikic/fast-route](https://github.com/nikic/fast-route)
+
+# Benchmarks
+
+This is the list of the available benchmarks
+
+| File                            | Class             | Package\Strategy                                     |
++---------------------------------+-------------------+------------------------------------------------------+
+| benchmark/Bitbucket_Symfony.php | Bitbucket_Symfony | Using `Symfony\Component\Routing\Matcher\UrlMatcher` |
+
 
 # Routes
 
 All the routes for this benchmark are read from this address:
 https://developer.atlassian.com/bitbucket/api/2/reference/resource/
 
-Only the paths are used, and the HTTP verbs/methods are ignored. You can see the
-list of paths in [bitbucket-routes.txt](bitbucket-routes.txt):
+Only the paths are used, and the HTTP verbs/methods are ignored.
+You can see the list of paths in [bitbucket-routes.txt](bitbucket-routes.txt):
 
 ```
 /addon
@@ -34,5 +50,5 @@ list of paths in [bitbucket-routes.txt](bitbucket-routes.txt):
 
 There are a few scripts to assist with some of the grunt work:
 
-* [scripts/download-bitbucket-routes.php](scripts/download-bitbucket-routes.php)
-	Downloads the path definitions from [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) page
+* [scripts/download-bitbucket-routes.php](scripts/download-bitbucket-routes.php):
+	downloads the path definitions from [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) page
