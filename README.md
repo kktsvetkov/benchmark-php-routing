@@ -138,3 +138,5 @@ where `symfony_compiled` is again the fastest, but only 1.3x to 1.6x times.
 | symfony          | benchLongest | 300    | 0.737565 seconds | 406.74392150689 |
 +------------------+--------------+--------+------------------+-----------------+
 ```
+
+# Github Actions
