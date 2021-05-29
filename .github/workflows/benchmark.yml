@@ -6,7 +6,7 @@ jobs:
   tests:
     name: Benchmark PHP Routing ${{ matrix.php }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
+    continue-on-error: [false]
     strategy:
       fail-fast: false
       matrix:
