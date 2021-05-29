@@ -79,8 +79,8 @@ of the scenarios against all of the packages and strategies, and calculate the
 number of routes matched per second. The results are then sorted by that data.
 
 Here's the inaugural run of that script, and as you can see
-Symfony's Compiled URL Matching is 3x to 10x faster than the
-rest.
+Symfony's Compiled URL Matching `symfony_compiled` is 3x to
+10x faster than the rest.
 
 ```
 ~/github.benchmark-php-routing/php scripts/quick-benchmark.php
@@ -107,4 +107,34 @@ rest.
 | symfony          | benchLast    | 200    | 7.047871 seconds  | 28.377364393312 |
 | fast_char_count  | benchLast    | 200    | 7.467640 seconds  | 26.782223307453 |
 +------------------+--------------+--------+-------------------+-----------------+
+```
+
+Here's a another run of `scripts/quick-benchmark.php` by [plamen-dimitrov06](https://github.com/plamen-dimitrov06)
+where `symfony_compiled` is again the fastest, but only 1.3x to 1.6x times.
+
+```
+~/code/kt-benchmarks/benchmark-php-routing$ php scripts/quick-benchmark.php
+ 18/18 [============================] 100%
++------------------+--------------+--------+------------------+-----------------+
+| Case             | Scenario     | Routes | Time             | Per Second      |
++------------------+--------------+--------+------------------+-----------------+
+| symfony_compiled | benchAll     | 364    | 0.351326 seconds | 1036.0747898977 |
+| fast_mark        | benchAll     | 364    | 0.560822 seconds | 649.04755560299 |
+| symfony_compiled | benchLast    | 300    | 0.475699 seconds | 630.65096385072 |
+| fast_group_count | benchAll     | 364    | 0.579749 seconds | 627.85780155319 |
+| fast_group_pos   | benchAll     | 364    | 0.579780 seconds | 627.82423695623 |
+| fast_char_count  | benchAll     | 364    | 0.580388 seconds | 627.16657930498 |
+| symfony_compiled | benchLongest | 300    | 0.480324 seconds | 624.57837066451 |
+| symfony          | benchAll     | 364    | 0.668890 seconds | 544.18514304616 |
+| fast_mark        | benchLast    | 300    | 0.648548 seconds | 462.57168569463 |
+| fast_mark        | benchLongest | 300    | 0.652762 seconds | 459.58562129413 |
+| fast_group_pos   | benchLongest | 300    | 0.654580 seconds | 458.30923031703 |
+| fast_group_pos   | benchLast    | 300    | 0.660431 seconds | 454.2488794418  |
+| fast_char_count  | benchLongest | 300    | 0.660993 seconds | 453.86269322123 |
+| fast_char_count  | benchLast    | 300    | 0.665642 seconds | 450.69269907106 |
+| fast_group_count | benchLast    | 300    | 0.666072 seconds | 450.40183154431 |
+| fast_group_count | benchLongest | 300    | 0.669639 seconds | 448.00250652444 |
+| symfony          | benchLast    | 300    | 0.732163 seconds | 409.74485120716 |
+| symfony          | benchLongest | 300    | 0.737565 seconds | 406.74392150689 |
++------------------+--------------+--------+------------------+-----------------+
 ```
