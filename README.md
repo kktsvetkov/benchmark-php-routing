@@ -140,3 +140,7 @@ where `symfony_compiled` is again the fastest, but only 1.3x to 1.6x times.
 ```
 
 # Github Actions
+
+You can see the results from the benchmarks run by Github Actions:
+
+https://github.com/kktsvetkov/benchmark-php-routing/actions
