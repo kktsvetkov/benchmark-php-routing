@@ -2,6 +2,8 @@
 
 Take a real world routing scenario in the form of [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) and benchmark PHP routing packages against it.
 
+You can read more about this here: http://kaloyan.info/writing/2021/05/31/benchmark-php-routing.html
+
 # Packages
 Here are the packages that are benchmakred:
 
