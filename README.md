@@ -8,8 +8,8 @@ Here are the packages that are benchmakred:
 * Symfony Routing [symfony/routing](https://github.com/symfony/routing)
 * Fast Route [nikic/fast-route](https://github.com/nikic/fast-route)
 
-So far these are the most popular ones: Symfony Routing component is used not only by
-them but by Laravel as well, and FastRoute is used by other popular solutions such
+So far these are the most popular ones: **Symfony Routing** component is used not only by
+them but by **Laravel** as well, and FastRoute is used by other popular solutions such
 as the [Slim](https://github.com/slimphp/Slim) framework and [League\Route](https://github.com/thephpleague/route).
 
 # Benchmarks
