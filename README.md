@@ -8,10 +8,10 @@ You can read more about this here: http://kaloyan.info/writing/2021/05/31/benchm
 Here are the packages that are benchmakred:
 
 * Symfony Routing [symfony/routing](https://github.com/symfony/routing)
-* Fast Route [nikic/fast-route](https://github.com/nikic/fast-route)
+* Fast Route [nikic/FastRoute](https://github.com/nikic/FastRoute)
 
 So far these are the most popular ones: **Symfony Routing** component is used not only by
-them but by **Laravel** as well, and FastRoute is used by other popular solutions such
+them but by **Laravel** as well, and **FastRoute** is used by other popular solutions such
 as the [Slim](https://github.com/slimphp/Slim) framework and [League\Route](https://github.com/thephpleague/route).
 
 # Benchmarks
@@ -23,10 +23,10 @@ benchmarks. They are combination of the packages and the strategies they provide
 |---------|------|----------|
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony.php | `Symfony\Component\Routing\Matcher\UrlMatcher` |
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony_Compiled.php | `Symfony\Component\Routing\Matcher\CompiledUrlMatcher` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` |
-| [nikic/fast-route](https://github.com/nikic/fast-route) | benchmark/FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` |
 
 The benchmark cases are:
 
