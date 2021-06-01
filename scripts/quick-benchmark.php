@@ -108,6 +108,6 @@ class quick_benchmark
 
 	function benchLast($bench)
 	{
-		$bench->runRouting( $bench->getLongestRoute()[0]['route'] );
+		$bench->runRouting( $bench->getLastRoute()[0]['route'] );
 	}
 }
