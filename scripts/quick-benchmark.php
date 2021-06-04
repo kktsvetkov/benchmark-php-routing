@@ -9,10 +9,16 @@ class quick_benchmark
 	const benchmark = array(
 		'symfony_compiled' => \Benchmark_Routing\Symfony_Compiled::class,
 		'symfony' => \Benchmark_Routing\Symfony::class,
+
 		'fast_mark' => \Benchmark_Routing\FastRoute_MarkBased::class,
 		'fast_group_pos' => \Benchmark_Routing\FastRoute_GroupPosBased::class,
 		'fast_char_count' => \Benchmark_Routing\FastRoute_CharCountBased::class,
 		'fast_group_count' => \Benchmark_Routing\FastRoute_GroupCountBased::class,
+
+		'fast_cached_mark' => \Benchmark_Routing\FastRoute_Cached_MarkBased::class,
+		'fast_cached_group_pos' => \Benchmark_Routing\FastRoute_Cached_GroupPosBased::class,
+		'fast_cached_char_count' => \Benchmark_Routing\FastRoute_Cached_CharCountBased::class,
+		'fast_cached_group_count' => \Benchmark_Routing\FastRoute_Cached_GroupCountBased::class,
 		);
 
 	const repeats = 300;
@@ -58,7 +64,7 @@ class quick_benchmark
 		$progressBar->finish();
 		$output->writeln('');
 
-		usort($result, function($a, $b)
+		usort($result, static function($a, $b)
 		{
 			return $b['per_second'] <=> $a['per_second'];
 		});
