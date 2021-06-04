@@ -202,3 +202,11 @@ https://github.com/kktsvetkov/benchmark-php-routing/actions
 | symfony          | benchLast    | 300    | 3.199316 seconds | 93.77004262047  |
 +------------------+--------------+--------+------------------+-----------------+
 ```
+
+# More Benchmarks
+
+[Saif Eddin Gmati](https://github.com/azjezz) created a fork in which there are
+benchmark cases included, which re-use the created dispatch objects. This is an
+interesting approach and one that is used with solutions like Swoole and ReactPHP:
+
+https://github.com/azjezz/benchmark-php-routing
