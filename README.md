@@ -23,10 +23,16 @@ benchmarks. They are combination of the packages and the strategies they provide
 |---------|------|----------|
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony.php | `Symfony\Component\Routing\Matcher\UrlMatcher` |
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony_Compiled.php | `Symfony\Component\Routing\Matcher\CompiledUrlMatcher` |
-| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` |
-| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` |
-| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` |
-| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` |
+
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` with `simpleDispatcher()` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` with `simpleDispatcher()` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` with `simpleDispatcher()` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` with `simpleDispatcher()` |
+
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_Cached_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` with `cachedDispatcher()` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_Cached_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` with `cachedDispatcher()` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_Cached_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` with `cachedDispatcher()` |
+| [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_Cached_MarkBased.php | `FastRoute\Dispatcher\MarkBased` with `cachedDispatcher()` |
 
 The benchmark cases are:
 
@@ -101,106 +107,154 @@ https://github.com/kktsvetkov/benchmark-php-routing/actions
 
 ## PHP 7.1
 ```
-+------------------+--------------+--------+------------------+-----------------+
-| Case             | Scenario     | Routes | Time             | Per Second      |
-+------------------+--------------+--------+------------------+-----------------+
-| symfony_compiled | benchAll     | 364    | 0.409297 seconds | 889.329776154   |
-| symfony_compiled | benchLast    | 300    | 0.481942 seconds | 622.48162298513 |
-| symfony_compiled | benchLongest | 300    | 1.230177 seconds | 243.86731339213 |
-| fast_group_count | benchAll     | 364    | 2.854642 seconds | 127.51160408835 |
-| fast_group_pos   | benchAll     | 364    | 2.876335 seconds | 126.54992612869 |
-| fast_mark        | benchAll     | 364    | 2.888358 seconds | 126.02315411124 |
-| fast_char_count  | benchAll     | 364    | 2.902446 seconds | 125.4114619327  |
-| fast_group_pos   | benchLast    | 300    | 2.475604 seconds | 121.1825566395  |
-| fast_mark        | benchLast    | 300    | 2.496498 seconds | 120.16833808118 |
-| fast_char_count  | benchLast    | 300    | 2.507835 seconds | 119.62509918124 |
-| fast_group_count | benchLast    | 300    | 2.668138 seconds | 112.43796120841 |
-| symfony          | benchAll     | 364    | 3.658297 seconds | 99.49985404727  |
-| fast_mark        | benchLongest | 300    | 3.198704 seconds | 93.787984007856 |
-| fast_char_count  | benchLongest | 300    | 3.223138 seconds | 93.076999323905 |
-| fast_group_pos   | benchLongest | 300    | 3.230840 seconds | 92.855109815605 |
-| fast_group_count | benchLongest | 300    | 3.304675 seconds | 90.780482413295 |
-| symfony          | benchLongest | 300    | 3.723648 seconds | 80.566152938331 |
-| symfony          | benchLast    | 300    | 4.979773 seconds | 60.243709364656 |
-+------------------+--------------+--------+------------------+-----------------+
++-------------------------+--------------+--------+------------------+-----------------+
+| Case                    | Scenario     | Routes | Time             | Per Second      |
++-------------------------+--------------+--------+------------------+-----------------+
+| fast_cached_mark        | benchAll     | 364    | 0.245389 seconds | 1483.3591673824 |
+| fast_cached_char_count  | benchAll     | 364    | 0.249807 seconds | 1457.125594837  |
+| fast_cached_group_pos   | benchAll     | 364    | 0.254083 seconds | 1432.6031935787 |
+| fast_cached_group_count | benchAll     | 364    | 0.260062 seconds | 1399.665061699  |
+| symfony_compiled        | benchAll     | 364    | 0.413057 seconds | 881.23411950566 |
+| fast_cached_mark        | benchLast    | 300    | 0.340637 seconds | 880.70299950656 |
+| fast_cached_group_count | benchLast    | 300    | 0.342824 seconds | 875.08463684742 |
+| fast_cached_char_count  | benchLast    | 300    | 0.351849 seconds | 852.63887580713 |
+| fast_cached_group_pos   | benchLast    | 300    | 0.365263 seconds | 821.32603666784 |
+| symfony_compiled        | benchLast    | 300    | 0.493613 seconds | 607.76356609928 |
+| fast_cached_mark        | benchLongest | 300    | 1.061979 seconds | 282.49144695766 |
+| fast_cached_group_pos   | benchLongest | 300    | 1.076209 seconds | 278.75624619514 |
+| fast_cached_group_count | benchLongest | 300    | 1.087883 seconds | 275.76495010203 |
+| fast_cached_char_count  | benchLongest | 300    | 1.112363 seconds | 269.69610910862 |
+| symfony_compiled        | benchLongest | 300    | 1.215672 seconds | 246.77708791194 |
+| fast_char_count         | benchAll     | 364    | 2.768154 seconds | 131.49556745285 |
+| fast_group_pos          | benchAll     | 364    | 2.787809 seconds | 130.56849077365 |
+| fast_mark               | benchAll     | 364    | 2.854463 seconds | 127.51960252867 |
+| fast_group_count        | benchAll     | 364    | 2.888068 seconds | 126.03581527453 |
+| fast_mark               | benchLast    | 300    | 2.428645 seconds | 123.52566284945 |
+| fast_char_count         | benchLast    | 300    | 2.504715 seconds | 119.77409626942 |
+| fast_group_count        | benchLast    | 300    | 2.540682 seconds | 118.07853915284 |
+| fast_group_pos          | benchLast    | 300    | 2.569429 seconds | 116.75746216514 |
+| symfony                 | benchAll     | 364    | 3.659201 seconds | 99.475270496406 |
+| fast_char_count         | benchLongest | 300    | 3.158607 seconds | 94.978577399213 |
+| fast_group_count        | benchLongest | 300    | 3.186798 seconds | 94.138376825474 |
+| fast_mark               | benchLongest | 300    | 3.187436 seconds | 94.119533765834 |
+| fast_group_pos          | benchLongest | 300    | 3.340925 seconds | 89.795491354189 |
+| symfony                 | benchLongest | 300    | 3.612994 seconds | 83.033629085927 |
+| symfony                 | benchLast    | 300    | 4.843723 seconds | 61.935831411289 |
++-------------------------+--------------+--------+------------------+-----------------+
 ```
 
 ## PHP 7.2
 ```
-+------------------+--------------+--------+------------------+-----------------+
-| Case             | Scenario     | Routes | Time             | Per Second      |
-+------------------+--------------+--------+------------------+-----------------+
-| symfony_compiled | benchAll     | 364    | 0.360886 seconds | 1008.6284926794 |
-| symfony_compiled | benchLast    | 300    | 0.442319 seconds | 678.24365843404 |
-| symfony_compiled | benchLongest | 300    | 0.992547 seconds | 302.25267856885 |
-| fast_mark        | benchAll     | 364    | 2.034539 seconds | 178.91030980931 |
-| fast_group_pos   | benchAll     | 364    | 2.083953 seconds | 174.66805480364 |
-| fast_char_count  | benchAll     | 364    | 2.116721 seconds | 171.9640966591  |
-| fast_group_count | benchAll     | 364    | 2.168229 seconds | 167.8789383841  |
-| fast_mark        | benchLast    | 300    | 1.850838 seconds | 162.08874507808 |
-| fast_char_count  | benchLast    | 300    | 1.862375 seconds | 161.08463473807 |
-| fast_group_pos   | benchLast    | 300    | 1.904495 seconds | 157.52207271104 |
-| fast_group_count | benchLast    | 300    | 1.929290 seconds | 155.49761376288 |
-| symfony          | benchAll     | 364    | 2.519544 seconds | 144.47059326726 |
-| fast_group_pos   | benchLongest | 300    | 2.380750 seconds | 126.01070142075 |
-| fast_group_count | benchLongest | 300    | 2.410906 seconds | 124.43454472688 |
-| fast_char_count  | benchLongest | 300    | 2.416596 seconds | 124.14155215417 |
-| fast_mark        | benchLongest | 300    | 2.454727 seconds | 122.21317436736 |
-| symfony          | benchLongest | 300    | 2.693696 seconds | 111.37114119265 |
-| symfony          | benchLast    | 300    | 3.420336 seconds | 87.710680848901 |
-+------------------+--------------+--------+------------------+-----------------+
++-------------------------+--------------+--------+------------------+-----------------+
+| Case                    | Scenario     | Routes | Time             | Per Second      |
++-------------------------+--------------+--------+------------------+-----------------+
+| fast_cached_mark        | benchAll     | 364    | 0.213650 seconds | 1703.7211333838 |
+| fast_cached_group_count | benchAll     | 364    | 0.230613 seconds | 1578.4019576929 |
+| fast_cached_group_pos   | benchAll     | 364    | 0.231448 seconds | 1572.7079173805 |
+| fast_cached_char_count  | benchAll     | 364    | 0.233461 seconds | 1559.1475705827 |
+| fast_cached_mark        | benchLast    | 300    | 0.306500 seconds | 978.7921948108  |
+| symfony_compiled        | benchAll     | 364    | 0.373521 seconds | 974.50990099327 |
+| fast_cached_char_count  | benchLast    | 300    | 0.319633 seconds | 938.57640914251 |
+| fast_cached_group_count | benchLast    | 300    | 0.319820 seconds | 938.02785402355 |
+| fast_cached_group_pos   | benchLast    | 300    | 0.325751 seconds | 920.94930974062 |
+| symfony_compiled        | benchLast    | 300    | 0.452147 seconds | 663.50101927714 |
+| fast_cached_group_pos   | benchLongest | 300    | 0.826421 seconds | 363.01109466367 |
+| fast_cached_char_count  | benchLongest | 300    | 0.839799 seconds | 357.22836770222 |
+| fast_cached_mark        | benchLongest | 300    | 0.843073 seconds | 355.84111779518 |
+| fast_cached_group_count | benchLongest | 300    | 0.852549 seconds | 351.88590125425 |
+| symfony_compiled        | benchLongest | 300    | 0.957260 seconds | 313.39451497233 |
+| fast_mark               | benchAll     | 364    | 2.072627 seconds | 175.62252548766 |
+| fast_char_count         | benchAll     | 364    | 2.103555 seconds | 173.04040361108 |
+| fast_group_pos          | benchAll     | 364    | 2.121528 seconds | 171.57443809145 |
+| fast_group_count        | benchAll     | 364    | 2.126081 seconds | 171.20702444539 |
+| fast_mark               | benchLast    | 300    | 1.848153 seconds | 162.32421311617 |
+| fast_char_count         | benchLast    | 300    | 1.856099 seconds | 161.62931919579 |
+| fast_group_pos          | benchLast    | 300    | 1.876896 seconds | 159.83837956819 |
+| fast_group_count        | benchLast    | 300    | 1.970900 seconds | 152.21473811394 |
+| symfony                 | benchAll     | 364    | 2.571703 seconds | 141.54045240237 |
+| fast_mark               | benchLongest | 300    | 2.346373 seconds | 127.85690494098 |
+| fast_char_count         | benchLongest | 300    | 2.369537 seconds | 126.60700610622 |
+| fast_group_pos          | benchLongest | 300    | 2.376117 seconds | 126.2564095669  |
+| fast_group_count        | benchLongest | 300    | 2.457300 seconds | 122.08520623162 |
+| symfony                 | benchLongest | 300    | 2.673281 seconds | 112.22165014515 |
+| symfony                 | benchLast    | 300    | 3.383559 seconds | 88.664037190817 |
++-------------------------+--------------+--------+------------------+-----------------+
 ```
 
 ## PHP 7.3
 ```
-+------------------+--------------+--------+------------------+-----------------+
-| Case             | Scenario     | Routes | Time             | Per Second      |
-+------------------+--------------+--------+------------------+-----------------+
-| symfony_compiled | benchAll     | 364    | 0.333783 seconds | 1090.5283873862 |
-| symfony_compiled | benchLast    | 300    | 0.383387 seconds | 782.49945119558 |
-| symfony_compiled | benchLongest | 300    | 0.921058 seconds | 325.7124086605  |
-| fast_mark        | benchAll     | 364    | 2.041492 seconds | 178.30096939752 |
-| fast_group_pos   | benchAll     | 364    | 2.126128 seconds | 171.20324229753 |
-| fast_group_count | benchAll     | 364    | 2.152566 seconds | 169.1005095411  |
-| fast_char_count  | benchAll     | 364    | 2.172326 seconds | 167.56233880761 |
-| fast_char_count  | benchLast    | 300    | 1.876143 seconds | 159.90252523982 |
-| fast_group_count | benchLast    | 300    | 1.878880 seconds | 159.66958835844 |
-| fast_group_pos   | benchLast    | 300    | 1.904677 seconds | 157.50702796943 |
-| fast_mark        | benchLast    | 300    | 1.913834 seconds | 156.75339925419 |
-| symfony          | benchAll     | 364    | 2.562547 seconds | 142.04617690139 |
-| fast_char_count  | benchLongest | 300    | 2.394527 seconds | 125.28570577975 |
-| fast_group_count | benchLongest | 300    | 2.419258 seconds | 124.00496969431 |
-| fast_mark        | benchLongest | 300    | 2.433419 seconds | 123.28333153219 |
-| fast_group_pos   | benchLongest | 300    | 2.499992 seconds | 120.00038910038 |
-| symfony          | benchLongest | 300    | 2.713896 seconds | 110.54218584799 |
-| symfony          | benchLast    | 300    | 3.544668 seconds | 84.634161352191 |
-+------------------+--------------+--------+------------------+-----------------+
++-------------------------+--------------+--------+------------------+-----------------+
+| Case                    | Scenario     | Routes | Time             | Per Second      |
++-------------------------+--------------+--------+------------------+-----------------+
+| fast_cached_mark        | benchAll     | 364    | 0.212982 seconds | 1709.0651027469 |
+| fast_cached_group_count | benchAll     | 364    | 0.218750 seconds | 1664            |
+| fast_cached_group_pos   | benchAll     | 364    | 0.221451 seconds | 1643.7041491851 |
+| fast_cached_char_count  | benchAll     | 364    | 0.226611 seconds | 1606.2775517504 |
+| symfony_compiled        | benchAll     | 364    | 0.345792 seconds | 1052.6564898549 |
+| fast_cached_mark        | benchLast    | 300    | 0.290941 seconds | 1031.1368972257 |
+| fast_cached_group_pos   | benchLast    | 300    | 0.298009 seconds | 1006.6812807015 |
+| fast_cached_group_count | benchLast    | 300    | 0.300559 seconds | 998.139986483   |
+| fast_cached_char_count  | benchLast    | 300    | 0.322342 seconds | 930.68806901771 |
+| symfony_compiled        | benchLast    | 300    | 0.439923 seconds | 681.93744644805 |
+| fast_cached_group_count | benchLongest | 300    | 0.854665 seconds | 351.01480616081 |
+| fast_cached_mark        | benchLongest | 300    | 0.872547 seconds | 343.8209615578  |
+| fast_cached_char_count  | benchLongest | 300    | 0.878194 seconds | 341.61022443322 |
+| fast_cached_group_pos   | benchLongest | 300    | 0.900564 seconds | 333.1245917984  |
+| symfony_compiled        | benchLongest | 300    | 1.016180 seconds | 295.22327604169 |
+| fast_char_count         | benchAll     | 364    | 2.216095 seconds | 164.2528884421  |
+| fast_group_pos          | benchAll     | 364    | 2.221537 seconds | 163.85053254518 |
+| fast_mark               | benchAll     | 364    | 2.247656 seconds | 161.94648232648 |
+| fast_group_count        | benchAll     | 364    | 2.302350 seconds | 158.09933025128 |
+| fast_mark               | benchLast    | 300    | 1.959023 seconds | 153.13755896805 |
+| fast_group_pos          | benchLast    | 300    | 1.980528 seconds | 151.47474935707 |
+| fast_char_count         | benchLast    | 300    | 2.041746 seconds | 146.93305607013 |
+| fast_group_count        | benchLast    | 300    | 2.094186 seconds | 143.25376278568 |
+| symfony                 | benchAll     | 364    | 2.811152 seconds | 129.48428345902 |
+| fast_mark               | benchLongest | 300    | 2.530609 seconds | 118.5485441453  |
+| fast_group_count        | benchLongest | 300    | 2.543774 seconds | 117.93499929986 |
+| fast_char_count         | benchLongest | 300    | 2.576504 seconds | 116.436846565   |
+| fast_group_pos          | benchLongest | 300    | 2.733477 seconds | 109.75032433397 |
+| symfony                 | benchLongest | 300    | 3.127849 seconds | 95.912555310366 |
+| symfony                 | benchLast    | 300    | 3.844360 seconds | 78.036398718119 |
++-------------------------+--------------+--------+------------------+-----------------+
 ```
 
 ## PHP 7.4
 ```
-+------------------+--------------+--------+------------------+-----------------+
-| Case             | Scenario     | Routes | Time             | Per Second      |
-+------------------+--------------+--------+------------------+-----------------+
-| symfony_compiled | benchAll     | 364    | 0.334722 seconds | 1087.4702395071 |
-| symfony_compiled | benchLast    | 300    | 0.391615 seconds | 766.05866967986 |
-| symfony_compiled | benchLongest | 300    | 0.918377 seconds | 326.66326060138 |
-| fast_group_pos   | benchAll     | 364    | 1.836413 seconds | 198.2125036709  |
-| fast_char_count  | benchAll     | 364    | 1.854658 seconds | 196.26261116629 |
-| fast_group_count | benchAll     | 364    | 1.894953 seconds | 192.08919567152 |
-| fast_mark        | benchAll     | 364    | 1.907493 seconds | 190.82637690195 |
-| fast_mark        | benchLast    | 300    | 1.670489 seconds | 179.58812475032 |
-| fast_char_count  | benchLast    | 300    | 1.686217 seconds | 177.91303706026 |
-| fast_group_pos   | benchLast    | 300    | 1.698040 seconds | 176.67428240226 |
-| fast_group_count | benchLast    | 300    | 1.705245 seconds | 175.9277973736  |
-| symfony          | benchAll     | 364    | 2.359127 seconds | 154.29436105241 |
-| fast_mark        | benchLongest | 300    | 2.150827 seconds | 139.48123657748 |
-| fast_group_count | benchLongest | 300    | 2.189247 seconds | 137.03341011817 |
-| fast_char_count  | benchLongest | 300    | 2.192200 seconds | 136.84883106702 |
-| fast_group_pos   | benchLongest | 300    | 2.279765 seconds | 131.59250318029 |
-| symfony          | benchLongest | 300    | 2.453912 seconds | 122.2537717685  |
-| symfony          | benchLast    | 300    | 3.199316 seconds | 93.77004262047  |
-+------------------+--------------+--------+------------------+-----------------+
++-------------------------+--------------+--------+------------------+-----------------+
+| Case                    | Scenario     | Routes | Time             | Per Second      |
++-------------------------+--------------+--------+------------------+-----------------+
+| fast_cached_mark        | benchAll     | 364    | 0.184830 seconds | 1969.3752544393 |
+| fast_cached_char_count  | benchAll     | 364    | 0.190946 seconds | 1906.2994762045 |
+| fast_cached_group_pos   | benchAll     | 364    | 0.198573 seconds | 1833.0779803957 |
+| fast_cached_group_count | benchAll     | 364    | 0.200405 seconds | 1816.3230136136 |
+| fast_cached_char_count  | benchLast    | 300    | 0.265815 seconds | 1128.6043973096 |
+| symfony_compiled        | benchAll     | 364    | 0.323630 seconds | 1124.7408882992 |
+| fast_cached_mark        | benchLast    | 300    | 0.267429 seconds | 1121.7935985194 |
+| fast_cached_group_count | benchLast    | 300    | 0.272139 seconds | 1102.3775356263 |
+| fast_cached_group_pos   | benchLast    | 300    | 0.274821 seconds | 1091.6204122212 |
+| symfony_compiled        | benchLast    | 300    | 0.367107 seconds | 817.20009430048 |
+| fast_cached_mark        | benchLongest | 300    | 0.723163 seconds | 414.84415953495 |
+| fast_cached_char_count  | benchLongest | 300    | 0.729227 seconds | 411.39449421304 |
+| fast_cached_group_pos   | benchLongest | 300    | 0.739985 seconds | 405.41362918457 |
+| fast_cached_group_count | benchLongest | 300    | 0.775798 seconds | 386.69855832926 |
+| symfony_compiled        | benchLongest | 300    | 0.854253 seconds | 351.18399485124 |
+| fast_mark               | benchAll     | 364    | 1.739359 seconds | 209.27250815583 |
+| fast_group_count        | benchAll     | 364    | 1.753623 seconds | 207.57026920172 |
+| fast_group_pos          | benchAll     | 364    | 1.808081 seconds | 201.31842422393 |
+| fast_mark               | benchLast    | 300    | 1.535626 seconds | 195.36004613032 |
+| fast_char_count         | benchAll     | 364    | 1.875456 seconds | 194.08612178155 |
+| fast_char_count         | benchLast    | 300    | 1.546621 seconds | 193.97123384788 |
+| fast_group_pos          | benchLast    | 300    | 1.564864 seconds | 191.70993107962 |
+| fast_group_count        | benchLast    | 300    | 1.571994 seconds | 190.84041501369 |
+| symfony                 | benchAll     | 364    | 2.233018 seconds | 163.00807872597 |
+| fast_mark               | benchLongest | 300    | 2.023856 seconds | 148.2318955379  |
+| fast_group_pos          | benchLongest | 300    | 2.036537 seconds | 147.30889250637 |
+| fast_group_count        | benchLongest | 300    | 2.042478 seconds | 146.88040095373 |
+| fast_char_count         | benchLongest | 300    | 2.085564 seconds | 143.84598826018 |
+| symfony                 | benchLongest | 300    | 2.308640 seconds | 129.9466350681  |
+| symfony                 | benchLast    | 300    | 2.949923 seconds | 101.6975684065  |
++-------------------------+--------------+--------+------------------+-----------------+
 ```
 
 # More Benchmarks
