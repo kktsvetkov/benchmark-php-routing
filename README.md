@@ -19,28 +19,21 @@ as the [Slim](https://github.com/slimphp/Slim) framework and [League\Route](http
 This is the list of the available [phpbench](https://github.com/phpbench/phpbench)
 benchmarks. They are combination of the packages and the strategies they provide.
 
-| File | Strategy |
-|------|----------|
-| [benchmark/Symfony.php](benchmark/Symfony.php) | `Symfony\Component\Routing\Matcher\UrlMatcher` |
-| [benchmark/Symfony_Compiled.php](benchmark/Symfony_Compiled.php) | `Symfony\Component\Routing\Matcher\CompiledUrlMatcher` |
+* [symfony/routing](https://github.com/symfony/routing)
+	* [benchmark/Symfony.php](benchmark/Symfony.php) with `Symfony\Component\Routing\Matcher\UrlMatcher`
+	* [benchmark/Symfony_Compiled.php](benchmark/Symfony_Compiled.php) with `Symfony\Component\Routing\Matcher\CompiledUrlMatcher`
 
- * [nikic/FastRoute](https://github.com/nikic/FastRoute) with `simpleDispatcher()`
-
-| File | Strategy |
-|------|----------|
-| [benchmark/FastRoute_GroupCountBased.php](benchmark/FastRoute_GroupCountBased.php) | `FastRoute\Dispatcher\GroupCountBased` |
-| [benchmark/FastRoute_GroupPosBased.php](benchmark/FastRoute_GroupPosBased.php) | `FastRoute\Dispatcher\GroupPosBased` |
-| [benchmark/FastRoute_CharCountBased.php](benchmark/FastRoute_CharCountBased.php) | `FastRoute\Dispatcher\CharCountBased` |
-| [benchmark/FastRoute_MarkBased.php](benchmark/FastRoute_MarkBased.php) | `FastRoute\Dispatcher\MarkBased` |
+* [nikic/FastRoute](https://github.com/nikic/FastRoute) with `simpleDispatcher()`
+	* [benchmark/FastRoute_GroupCountBased.php](benchmark/FastRoute_GroupCountBased.php) with `FastRoute\Dispatcher\GroupCountBased`
+	* [benchmark/FastRoute_GroupPosBased.php](benchmark/FastRoute_GroupPosBased.php) with `FastRoute\Dispatcher\GroupPosBased`
+	* [benchmark/FastRoute_CharCountBased.php](benchmark/FastRoute_CharCountBased.php) with `FastRoute\Dispatcher\CharCountBased`
+	* [benchmark/FastRoute_MarkBased.php](benchmark/FastRoute_MarkBased.php) with `FastRoute\Dispatcher\MarkBased`
 
 * [nikic/FastRoute](https://github.com/nikic/FastRoute) with `cachedDispatcher()`
-
-| File | Strategy |
-|------|----------|
-| [benchmark/FastRoute_Cached_GroupCountBased.php](benchmark/FastRoute_Cached_GroupCountBased.php) | `FastRoute\Dispatcher\GroupCountBased` |
-| [benchmark/FastRoute_Cached_GroupPosBased.php](benchmark/FastRoute_Cached_GroupPosBased.php) | `FastRoute\Dispatcher\GroupPosBased` |
-| [benchmark/FastRoute_Cached_CharCountBased.php](benchmark/FastRoute_Cached_CharCountBased.php) | `FastRoute\Dispatcher\CharCountBased` |
-| [benchmark/FastRoute_Cached_MarkBased.php](benchmark/FastRoute_Cached_MarkBased.php) | `FastRoute\Dispatcher\MarkBased` |
+	* [benchmark/FastRoute_Cached_GroupCountBased.php](benchmark/FastRoute_Cached_GroupCountBased.php) with `FastRoute\Dispatcher\GroupCountBased`
+	* [benchmark/FastRoute_Cached_GroupPosBased.php](benchmark/FastRoute_Cached_GroupPosBased.php) with `FastRoute\Dispatcher\GroupPosBased`
+	* [benchmark/FastRoute_Cached_CharCountBased.php](benchmark/FastRoute_Cached_CharCountBased.php) with `FastRoute\Dispatcher\CharCountBased`
+	* [benchmark/FastRoute_Cached_MarkBased.php](benchmark/FastRoute_Cached_MarkBased.php) with `FastRoute\Dispatcher\MarkBased`
 
 The benchmark cases are:
 
