@@ -23,12 +23,10 @@ benchmarks. They are combination of the packages and the strategies they provide
 |---------|------|----------|
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony.php | `Symfony\Component\Routing\Matcher\UrlMatcher` |
 | [symfony/routing](https://github.com/symfony/routing) | benchmark/Symfony_Compiled.php | `Symfony\Component\Routing\Matcher\CompiledUrlMatcher` |
-
 | [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` with `simpleDispatcher()` |
 | [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` with `simpleDispatcher()` |
 | [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` with `simpleDispatcher()` |
 | [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_MarkBased.php | `FastRoute\Dispatcher\MarkBased` with `simpleDispatcher()` |
-
 | [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_Cached_GroupCountBased.php | `FastRoute\Dispatcher\GroupCountBased` with `cachedDispatcher()` |
 | [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_Cached_GroupPosBased.php | `FastRoute\Dispatcher\GroupPosBased` with `cachedDispatcher()` |
 | [nikic/FastRoute](https://github.com/nikic/FastRoute) | benchmark/FastRoute_Cached_CharCountBased.php | `FastRoute\Dispatcher\CharCountBased` with `cachedDispatcher()` |
