@@ -24,13 +24,17 @@ class Symfony_Compiled extends Benchmark
 			);
 	}
 
-	function runRouting(string $route) : array
+	function setupRouting()
 	{
-		$matcher = new CompiledUrlMatcher(
+		return new CompiledUrlMatcher(
 			include $this->cached_routes,
 			new RequestContext()
 			);
+	}
 
+	function runRouting(string $route) : array
+	{
+		$matcher = $this->setupRouting();
 		return $matcher->match($route);
 	}
 

@@ -2,12 +2,24 @@
 
 namespace Benchmark_Routing;
 
+use function assert;
+
 /**
 * Benchmark routing the Bitbucket API paths
 */
 abstract class Benchmark
 {
+	abstract function setupRouting();
 	abstract function runRouting(string $route) : array;
+
+	/**
+	* @Revs(100)
+	* @Iterations(5)
+	*/
+	function benchSetup()
+	{
+		$this->setupRouting();
+	}
 
 	/**
 	* @ParamProviders("getLastRoute")
@@ -65,7 +77,7 @@ abstract class Benchmark
 	function runRoute($route, array $result)
 	{
 		$match = $this->runRouting( $route );
-		\assert($match['_route'] === $result['_route']);
+		assert($match['_route'] === $result['_route']);
 	}
 
 	function getRoutes() : array

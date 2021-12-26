@@ -10,12 +10,16 @@ class Symfony extends Benchmark
 {
 	function runRouting(string $route) : array
 	{
-		$matcher = new UrlMatcher(
+		$matcher = $this->setupRouting(); 
+		return $matcher->match($route);
+	}
+
+	function setupRouting()
+	{
+		return new UrlMatcher(
 			$this->loadedRoutes(),
 			new RequestContext()
 			);
-
-		return $matcher->match($route);
 	}
 
 	function loadedRoutes() : RouteCollection

@@ -27,6 +27,7 @@ class quick_benchmark
 		'benchAll' => [182, 2], /* total number of routes */
 		'benchLongest' => [1, self::repeats],
 		'benchLast' => [1, self::repeats],
+		'benchSetup' => [1, self::repeats],
 		);
 
 	function __construct($case, $scenario)
@@ -105,6 +106,11 @@ class quick_benchmark
 	function benchAll($bench)
 	{
 		$bench->benchAll();
+	}
+
+	function benchSetup($bench)
+	{
+		$bench->benchSetup();
 	}
 
 	function benchLongest($bench)

@@ -12,13 +12,17 @@ abstract class FastRoute_Abstract extends Benchmark
 
 	function runRouting(string $route) : array
 	{
-		$dispatcher = simpleDispatcher(
+		$dispatcher = $this->setupRouting();
+		return $dispatcher->dispatch('GET', $route)[1];
+	}
+
+	function setupRouting()
+	{
+		return simpleDispatcher(
 			[$this, 'loadRoutes'], [
 			'dataGenerator' => $this->dataGeneratorClass,
 	                'dispatcher' => $this->dispatcherClass
 			]);
-
-		return $dispatcher->dispatch('GET', $route)[1];
 	}
 
 	function loadRoutes(RouteCollector $routes)

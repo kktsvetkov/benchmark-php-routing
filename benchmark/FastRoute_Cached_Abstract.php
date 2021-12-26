@@ -17,9 +17,9 @@ abstract class FastRoute_Cached_Abstract extends Benchmark
 
 	protected $cached_routes = '/tmp/benchmark-fastroute-cached-routes-%s.php';
 
-	function runRouting(string $route) : array
+	function setupRouting()
 	{
-		$dispatcher = cachedDispatcher(
+		return cachedDispatcher(
 			[$this, 'loadRoutes'], [
 			'dataGenerator' => $this->dataGeneratorClass,
 	                'dispatcher' => $this->dispatcherClass,
@@ -28,7 +28,11 @@ abstract class FastRoute_Cached_Abstract extends Benchmark
 				strtolower(substr(get_called_class(), 35))
 				)
 			]);
+	}
 
+	function runRouting(string $route) : array
+	{
+		$dispatcher = $this->setupRouting();
 		return $dispatcher->dispatch('GET', $route)[1];
 	}
 
