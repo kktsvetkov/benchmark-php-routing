@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [7.2, 7.3, 7.4, 8.0]
+        php: [7.3, 7.4, 8.0]
 
     steps:
       - name: Checkout
@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies with Composer
         uses: ramsey/composer-install@v1
 
-      - name: Run phpbench
-        run: vendor/bin/phpbench run --report=aggregate
-
       - name: Quick Benchmark
         run: php scripts/quick-benchmark.php
+
+      - name: Run phpbench
+        run: vendor/bin/phpbench run --report=aggregate
