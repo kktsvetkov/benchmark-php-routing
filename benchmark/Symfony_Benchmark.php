@@ -6,11 +6,11 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 
-class Symfony extends Benchmark
+class Symfony_Benchmark extends Benchmark
 {
 	function runRouting(string $route) : array
 	{
-		$matcher = $this->setupRouting(); 
+		$matcher = $this->setupRouting();
 		return $matcher->match($route);
 	}
 

@@ -9,7 +9,7 @@ use Symfony\Component\Routing\RouteCollection;
 
 use function file_put_contents;
 
-class Symfony_Compiled extends Benchmark
+class Symfony_Compiled_Benchmark extends Benchmark
 {
 	protected $cached_routes = '/tmp/benchmark-symfony-compiled-routes.php';
 

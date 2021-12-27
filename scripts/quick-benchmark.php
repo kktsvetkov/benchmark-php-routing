@@ -7,18 +7,18 @@ new quick_benchmark($argv[1] ?? '', $argv[2] ?? '');
 class quick_benchmark
 {
 	const benchmark = array(
-		'symfony_compiled' => \Benchmark_Routing\Symfony_Compiled::class,
-		'symfony' => \Benchmark_Routing\Symfony::class,
+		'symfony_compiled' => \Benchmark_Routing\Symfony_Compiled_Benchmark::class,
+		'symfony' => \Benchmark_Routing\Symfony_Benchmark::class,
 
-		'fast_mark' => \Benchmark_Routing\FastRoute_MarkBased::class,
-		'fast_group_pos' => \Benchmark_Routing\FastRoute_GroupPosBased::class,
-		'fast_char_count' => \Benchmark_Routing\FastRoute_CharCountBased::class,
-		'fast_group_count' => \Benchmark_Routing\FastRoute_GroupCountBased::class,
+		'fast_mark' => \Benchmark_Routing\FastRoute_MarkBased_Benchmark::class,
+		'fast_group_pos' => \Benchmark_Routing\FastRoute_GroupPosBased_Benchmark::class,
+		'fast_char_count' => \Benchmark_Routing\FastRoute_CharCountBased_Benchmark::class,
+		'fast_group_count' => \Benchmark_Routing\FastRoute_GroupCountBased_Benchmark::class,
 
-		'fast_cached_mark' => \Benchmark_Routing\FastRoute_Cached_MarkBased::class,
-		'fast_cached_group_pos' => \Benchmark_Routing\FastRoute_Cached_GroupPosBased::class,
-		'fast_cached_char_count' => \Benchmark_Routing\FastRoute_Cached_CharCountBased::class,
-		'fast_cached_group_count' => \Benchmark_Routing\FastRoute_Cached_GroupCountBased::class,
+		'fast_cached_mark' => \Benchmark_Routing\FastRoute_Cached_MarkBased_Benchmark::class,
+		'fast_cached_group_pos' => \Benchmark_Routing\FastRoute_Cached_GroupPosBased_Benchmark::class,
+		'fast_cached_char_count' => \Benchmark_Routing\FastRoute_Cached_CharCountBased_Benchmark::class,
+		'fast_cached_group_count' => \Benchmark_Routing\FastRoute_Cached_GroupCountBased_Benchmark::class,
 		);
 
 	const scenario = array(
