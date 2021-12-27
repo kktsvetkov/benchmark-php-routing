@@ -6,16 +6,16 @@ use function assert;
 
 /**
 * Benchmark routing the Bitbucket API paths
+*
+* @Revs(182)
+* @Iterations(5)
 */
 abstract class Benchmark
 {
 	abstract function setupRouting();
+
 	abstract function runRouting(string $route) : array;
 
-	/**
-	* @Revs(100)
-	* @Iterations(5)
-	*/
 	function benchSetup()
 	{
 		$this->setupRouting();
@@ -23,8 +23,6 @@ abstract class Benchmark
 
 	/**
 	* @ParamProviders("getLastRoute")
-	* @Revs(100)
-	* @Iterations(5)
 	*/
 	function benchLast(array $last)
 	{
@@ -41,8 +39,6 @@ abstract class Benchmark
 
 	/**
 	* @ParamProviders("getLongestRoute")
-	* @Revs(100)
-	* @Iterations(5)
 	*/
 	function benchLongest(array $longest)
 	{
@@ -62,16 +58,23 @@ abstract class Benchmark
 	}
 
 	/**
-	* @Revs(10)
-	* @Iterations(1)
+	* @ParamProviders("getEachRoute")
 	*/
-	function benchAll()
+	function benchAll(array $current)
 	{
-		$routes = $this->getRoutes();
-		foreach ($routes as $params)
+		$this->runRoute( $current['route'], $current['result'] );
+	}
+
+	function getEachRoute() : array
+	{
+		static $routes;
+		if (!$routes)
 		{
-			$this->runRoute( $params['route'], $params['result'] );
+			$routes = $this->getRoutes();
 		}
+
+		$current = array_pop($routes);
+		return array($current);
 	}
 
 	function runRoute($route, array $result)

@@ -21,13 +21,11 @@ class quick_benchmark
 		'fast_cached_group_count' => \Benchmark_Routing\FastRoute_Cached_GroupCountBased::class,
 		);
 
-	const repeats = 300;
-
 	const scenario = array(
-		'benchAll' => [182, 2], /* total number of routes */
-		'benchLongest' => [1, self::repeats],
-		'benchLast' => [1, self::repeats],
-		'benchSetup' => [1, self::repeats],
+		'benchAll' => [182, 2], /* 182 is the total number of routes */
+		'benchLongest' => [2, 182],
+		'benchLast' => [2, 182],
+		'benchSetup' => [2, 182],
 		);
 
 	function __construct($case, $scenario)
@@ -105,7 +103,11 @@ class quick_benchmark
 
 	function benchAll($bench)
 	{
-		$bench->benchAll();
+		$routes = $bench->getRoutes();
+		foreach ($routes as $route)
+		{
+			$bench->runRouting( $route['route'] );
+		}
 	}
 
 	function benchSetup($bench)
