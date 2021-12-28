@@ -142,8 +142,6 @@ $routes->add('teams', new Route('/teams'));
 $routes->add('teams_username', new Route('/teams/{username}'));
 $routes->add('teams_username_followers', new Route('/teams/{username}/followers'));
 $routes->add('teams_username_following', new Route('/teams/{username}/following'));
-$routes->add('teams_username_hooks', new Route('/teams/{username}/hooks'));
-$routes->add('teams_username_hooks_uid', new Route('/teams/{username}/hooks/{uid}'));
 $routes->add('teams_username_members', new Route('/teams/{username}/members'));
 $routes->add('teams_username_permissions', new Route('/teams/{username}/permissions'));
 $routes->add('teams_username_permissions_repositories', new Route('/teams/{username}/permissions/repositories'));
@@ -161,8 +159,6 @@ $routes->add('user_permissions_repositories', new Route('/user/permissions/repos
 $routes->add('user_permissions_teams', new Route('/user/permissions/teams'));
 $routes->add('user_permissions_workspaces', new Route('/user/permissions/workspaces'));
 $routes->add('users_selected_user', new Route('/users/{selected_user}'));
-$routes->add('users_selected_user_hooks', new Route('/users/{selected_user}/hooks'));
-$routes->add('users_selected_user_hooks_uid', new Route('/users/{selected_user}/hooks/{uid}'));
 $routes->add('users_selected_user_pipelines_config_variables', new Route('/users/{selected_user}/pipelines_config/variables/'));
 $routes->add('users_selected_user_pipelines_config_variables_variable_uuid', new Route('/users/{selected_user}/pipelines_config/variables/{variable_uuid}'));
 $routes->add('users_selected_user_properties_app_key_property_name', new Route('/users/{selected_user}/properties/{app_key}/{property_name}'));
