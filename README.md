@@ -1,6 +1,6 @@
 # Benchmark PHP Routing
 
-Take a real world routing scenario in the form of [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) and benchmark PHP routing packages against it.
+Take a real world routing scenario in the form of [Bitbucket API](https://api.bitbucket.org/swagger.json) and benchmark PHP routing packages against it.
 
 You can read more about this here:
 
@@ -72,7 +72,7 @@ php scripts/quick-benchmark.php
 # Routes
 
 All the routes for this benchmark are read from this address:
-https://developer.atlassian.com/bitbucket/api/2/reference/resource/
+https://api.bitbucket.org/swagger.json
 
 Only the paths are used, and the HTTP verbs/methods are ignored.
 
@@ -98,7 +98,7 @@ You can see the list of paths in [bitbucket-routes.txt](bitbucket-routes.txt):
 There are a few scripts to assist with some of the grunt work:
 
 * [scripts/download-bitbucket-routes.php](scripts/download-bitbucket-routes.php):
-	downloads the path definitions from [Bitbucket API](https://developer.atlassian.com/bitbucket/api/2/reference/resource/) page
+	downloads the path definitions from [Bitbucket API](https://api.bitbucket.org/swagger.json) page
 * [scripts/generate-routes.php](scripts/generate-routes.php):
 	generates the routes definitions for the packages, as well as the expected results
 * [scripts/quick-benchmark.php](scripts/quick-benchmark.php):
