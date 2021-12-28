@@ -22,14 +22,21 @@ class quick_benchmark
 		);
 
 	const scenario = array(
-		'benchAll' => [182, 2], /* 182 is the total number of routes */
-		'benchLongest' => [2, 182],
-		'benchLast' => [2, 182],
-		'benchSetup' => [2, 182],
+		'benchAll' => [0, 2], /* 0 will be replaced with the total number of routes */
+		'benchLongest' => [2, 0],
+		'benchLast' => [2, 0],
+		'benchSetup' => [2, 0],
 		);
+
+	/**
+	* @var int total number of routes
+	*/
+	protected $total = 0;
 
 	function __construct($case, $scenario)
 	{
+		$this->total = count(file(__DIR__ . '/../bitbucket-routes.txt'));
+
 		('' === $case)
 			? $this->all()
 			: $this->run($case, $scenario);
@@ -49,6 +56,9 @@ class quick_benchmark
 			{
 				$time = shell_exec("php " . __FILE__ . " {$case} {$scenario}");
 				$progressBar->advance();
+
+				$revs[0] = $revs[0] ?: $this->total;
+				$revs[1] = $revs[1] ?: $this->total;
 
 				$result[] = array(
 					'case' => $case,
@@ -89,7 +99,7 @@ class quick_benchmark
 	{
 		$class = self::benchmark[ $case ];
 		$bench = new $class;
-		$repeats = self::scenario[ $scenario ][1];
+		$repeats = self::scenario[ $scenario ][1] ?: $this->total;
 
 		$start = microtime(true);
 		for ($i = 0; $i < $repeats; $i++)
