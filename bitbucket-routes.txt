@@ -135,8 +135,6 @@
 /teams/{username}
 /teams/{username}/followers
 /teams/{username}/following
-/teams/{username}/hooks
-/teams/{username}/hooks/{uid}
 /teams/{username}/members
 /teams/{username}/permissions
 /teams/{username}/permissions/repositories
@@ -154,8 +152,6 @@
 /user/permissions/teams
 /user/permissions/workspaces
 /users/{selected_user}
-/users/{selected_user}/hooks
-/users/{selected_user}/hooks/{uid}
 /users/{selected_user}/pipelines_config/variables/
 /users/{selected_user}/pipelines_config/variables/{variable_uuid}
 /users/{selected_user}/properties/{app_key}/{property_name}

@@ -1,21 +1,19 @@
 <?php /* Downloads the path definitions from Bitbucket API */
 
 $txt = __DIR__ . '/../bitbucket-routes.txt';
-$url = 'https://developer.atlassian.com/bitbucket/api/2/reference/resource/';
+$url = 'https://api.bitbucket.org/swagger.json';
 
-$tmp = '/tmp/download-bitbucket-routes.html';
-shell_exec("curl {$url} -o {$tmp}");
+$tmp = '/tmp/api.bitbucket.org.swagger.json';
+shell_exec("curl -s -L {$url} -o {$tmp}");
 
 $routes = [];
 
-$html = file_get_contents($tmp);
-if (preg_match('~data\: (.+),\s+context\: ~Us', $html, $R))
+$json = file_get_contents($tmp);
+$data = json_decode($json);
+
+foreach ($data->paths as $path => $dummy)
 {
-	$data = json_decode($R[1]);
-	foreach ($data->paths as $path => $dummy)
-	{
-		$routes[] = $path;
-	}
+	$routes[] = $path;
 }
 
 if ($routes)
