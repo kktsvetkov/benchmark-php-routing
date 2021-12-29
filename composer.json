@@ -5,7 +5,8 @@
 	{
 		"psr-4":
 		{
-			"Benchmark_Routing\\": "benchmark/"
+			"Benchmark_Routing\\": "benchmark/",
+			"Benchmark_Routing\\Generate\\": "generate/"
 		}
 	},
 
