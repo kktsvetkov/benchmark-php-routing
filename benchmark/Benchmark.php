@@ -80,7 +80,16 @@ abstract class Benchmark
 	function runRoute($route, array $result)
 	{
 		$match = $this->runRouting( $route );
-		assert($match['_route'] === $result['_route']);
+
+		foreach ($result as $key => $value)
+		{
+			if ($match[$key] !== $value)
+			{
+				throw new \UnexpectedValueException(
+					"Result mismatch for '{$key}': \"{$match[$key]}\" != \"{$value}\""
+				);
+			}
+		}
 	}
 
 	function getRoutes() : array
