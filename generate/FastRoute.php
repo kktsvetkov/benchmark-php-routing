@@ -17,9 +17,9 @@ class FastRoute extends GenerateAbstract
 			$name = $this->name($route);
 
 			/*
-			* $routes->addRoute('GET', '/addon', ['_route' => 'addon']);
+			* $routes->addRoute('GET', '/addon', 'addon');
 			*/
-			$fast[] = "\$routes->addRoute('GET', '{$route}', ['_route' => '{$name}']);";
+			$fast[] = "\$routes->addRoute('GET', '{$route}', '{$name}');";
 		}
 
 		return '<?php '

@@ -15,7 +15,7 @@ abstract class FastRoute_Abstract extends Benchmark
 		$dispatcher = $this->setupRouting();
 
 		$match = $dispatcher->dispatch('GET', $route);
-		return $match[1] + $match[2];
+		return array('_route' => $match[1]) + $match[2];
 	}
 
 	function setupRouting()
