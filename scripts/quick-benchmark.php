@@ -35,7 +35,8 @@ class quick_benchmark
 
 	function __construct($case, $scenario)
 	{
-		$this->total = count(file(__DIR__ . '/../bitbucket-routes.txt'));
+		$provider = new Benchmark_Routing\Provider\Bitbucket;
+		$this->total = $provider->count();
 
 		('' === $case)
 			? $this->all()
@@ -65,7 +66,9 @@ class quick_benchmark
 					'scenario' => $scenario,
 					'time' => $time,
 					'repeats' => $revs[0] * $revs[1],
-					'per_second' => $revs[0] * $revs[1] / $time,
+					'per_second' =>$time
+						? $revs[0] * $revs[1] / $time
+						: 0,
 					);
 			}
 		}
