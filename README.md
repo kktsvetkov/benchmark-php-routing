@@ -1,6 +1,11 @@
 # Benchmark PHP Routing
 
-Take a real world routing scenario in the form of [Bitbucket API](https://api.bitbucket.org/swagger.json) and benchmark PHP routing packages against it.
+Take a real world routing scenario in the form of a real API and benchmark PHP
+routing packages against it.
+
+The APIs used for this benchmark:
+
+* [Bitbucket API](https://api.bitbucket.org/swagger.json)
 
 You can read more about this here:
 
@@ -13,9 +18,10 @@ Here are the packages that are benchmakred:
 * Symfony Routing [symfony/routing](https://github.com/symfony/routing)
 * FastRoute [nikic/FastRoute](https://github.com/nikic/FastRoute)
 
-So far these are the most popular ones: **Symfony Routing** component is used not only by
-them but by **Laravel** as well, and **FastRoute** is used by other popular solutions such
-as the [Slim](https://github.com/slimphp/Slim) framework and [League\Route](https://github.com/thephpleague/route).
+So far these are the most popular ones: **Symfony Routing** component is used
+not only by Symfony but by **Laravel** as well, and **FastRoute** is used by
+other popular solutions such as the [Slim](https://github.com/slimphp/Slim)
+framework and [League\Route](https://github.com/thephpleague/route).
 
 # Benchmarks
 
@@ -69,14 +75,14 @@ by that data. Here's how to run this:
 php scripts/quick-benchmark.php
 ```
 
-# Routes
+# Routes: Bitbucket API
 
 All the routes for this benchmark are read from this address:
 https://api.bitbucket.org/swagger.json
 
 Only the paths are used, and the HTTP verbs/methods are ignored.
 
-You can see the list of paths in [bitbucket-routes.txt](bitbucket-routes.txt):
+You can see the list of paths in [routes/provider/bitbucket](routes/provider/bitbucket):
 
 ```
 /addon
@@ -97,8 +103,6 @@ You can see the list of paths in [bitbucket-routes.txt](bitbucket-routes.txt):
 
 There are a few scripts to assist with some of the grunt work:
 
-* [scripts/download-bitbucket-routes.php](scripts/download-bitbucket-routes.php):
-	downloads the path definitions from [Bitbucket API](https://api.bitbucket.org/swagger.json) page
 * [scripts/generate-routes.php](scripts/generate-routes.php):
 	generates the routes definitions for the packages, as well as the expected results
 * [scripts/quick-benchmark.php](scripts/quick-benchmark.php):
@@ -253,11 +257,3 @@ https://github.com/kktsvetkov/benchmark-php-routing/actions
 | symfony                 | benchAll     | 356    | 2.095318 seconds | 169.90262436848 |
 +-------------------------+--------------+--------+------------------+-----------------+
 ```
-
-# More Benchmarks
-
-[Saif Eddin Gmati](https://github.com/azjezz) created a fork in which there are
-benchmark cases included, which re-use the created dispatch objects. This is an
-interesting approach and one that is used with solutions like Swoole and ReactPHP:
-
-https://github.com/azjezz/benchmark-php-routing
