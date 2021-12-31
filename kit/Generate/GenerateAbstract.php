@@ -1,6 +1,6 @@
 <?php
 
-namespace Benchmark_Routing\Generate;
+namespace Benchmark_Routing\Kit\Generate;
 
 use function basename;
 use function file_put_contents;
@@ -11,7 +11,7 @@ use function trim;
 
 abstract class GenerateAbstract
 {
-	protected $folder =  __DIR__ . '/../routes/benchmark/';
+	protected $folder =  __DIR__ . '/../../routes/benchmark/';
 
 	protected $generated = 'routes.php';
 

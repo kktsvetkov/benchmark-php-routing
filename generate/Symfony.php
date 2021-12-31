@@ -2,6 +2,8 @@
 
 namespace Benchmark_Routing\Generate;
 
+use Benchmark_Routing\Kit\Generate\GenerateAbstract;
+
 use function join;
 
 class Symfony extends GenerateAbstract

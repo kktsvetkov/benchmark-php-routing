@@ -2,6 +2,8 @@
 
 namespace Benchmark_Routing\Generate;
 
+use Benchmark_Routing\Kit\Generate\GenerateAbstract;
+
 use function current;
 use function join;
 use function next;
