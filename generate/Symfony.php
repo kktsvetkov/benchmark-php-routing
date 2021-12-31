@@ -6,7 +6,7 @@ use function join;
 
 class Symfony extends GenerateAbstract
 {
-	protected $generated = 'symfony-routes.php';
+	protected $generated = 'symfony.php';
 
 	function generate(array $api)
 	{

@@ -24,6 +24,6 @@ class Symfony_Benchmark extends Benchmark
 
 	function loadedRoutes() : RouteCollection
 	{
-		return include __DIR__ . '/symfony-routes.php';
+		return include __DIR__ . '/../routes/benchmark/symfony.php';
 	}
 }

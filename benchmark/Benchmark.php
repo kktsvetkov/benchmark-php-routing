@@ -2,8 +2,6 @@
 
 namespace Benchmark_Routing;
 
-use function assert;
-
 /**
 * Benchmark routing the Bitbucket API paths
 *
@@ -94,6 +92,6 @@ abstract class Benchmark
 
 	function getRoutes() : array
 	{
-		return include __DIR__ . '/result-routes.php';
+		return include __DIR__ . '/../routes/benchmark/result.php';
 	}
 }

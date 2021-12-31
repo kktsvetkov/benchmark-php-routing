@@ -29,6 +29,6 @@ abstract class FastRoute_Abstract extends Benchmark
 
 	function loadRoutes(RouteCollector $routes)
 	{
-		include __DIR__ . '/fastroute-routes.php';
+		include __DIR__ . '/../routes/benchmark/fastroute.php';
 	}
 }

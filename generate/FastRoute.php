@@ -6,7 +6,7 @@ use function join;
 
 class FastRoute extends GenerateAbstract
 {
-	protected $generated = 'fastroute-routes.php';
+	protected $generated = 'fastroute.php';
 
 	function generate(array $api)
 	{

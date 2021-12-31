@@ -9,9 +9,9 @@ use Symfony\Component\Routing\RouteCollection;
 
 use function file_put_contents;
 
-class Symfony_Compiled_Benchmark extends Benchmark
+class Symfony_Compiled_Benchmark extends Symfony_Benchmark
 {
-	protected $cached_routes = '/tmp/benchmark-symfony-compiled-routes.php';
+	protected $cached_routes = __DIR__ . '/../routes/cache/symfony-compiled.php';
 
 	function __construct()
 	{
@@ -30,16 +30,5 @@ class Symfony_Compiled_Benchmark extends Benchmark
 			include $this->cached_routes,
 			new RequestContext()
 			);
-	}
-
-	function runRouting(string $route) : array
-	{
-		$matcher = $this->setupRouting();
-		return $matcher->match($route);
-	}
-
-	function loadedRoutes() : RouteCollection
-	{
-		return include __DIR__ . '/symfony-routes.php';
 	}
 }

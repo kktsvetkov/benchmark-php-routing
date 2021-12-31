@@ -10,7 +10,7 @@ use function str_replace;
 
 class Results extends GenerateAbstract
 {
-	protected $generated = 'result-routes.php';
+	protected $generated = 'result.php';
 
 	protected $vars = ['john', 'paul', 'george', 'ringo'];
 

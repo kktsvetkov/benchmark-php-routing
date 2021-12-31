@@ -11,7 +11,7 @@ use function trim;
 
 abstract class GenerateAbstract
 {
-	protected $folder =  __DIR__ . '/../benchmark/';
+	protected $folder =  __DIR__ . '/../routes/benchmark/';
 
 	protected $generated = 'routes.php';
 
