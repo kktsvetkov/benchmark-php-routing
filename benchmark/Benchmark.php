@@ -55,6 +55,33 @@ abstract class Benchmark
 		return array($longest);
 	}
 
+	function benchAll()
+	{
+		$next = $this->getNextRoute();
+		$this->runRoute( $next['route'], $next['result'] );
+	}
+
+	function getNextRoute()
+	{
+		static $routes;
+		if (!$routes)
+		{
+			$routes = $this->getRoutes();
+		}
+
+		$route = current($routes);
+		if ($route)
+		{
+			next($routes);
+		} else
+		{
+			reset($routes);
+			$route = current($routes);
+		}
+
+		return $route;
+	}
+
 	function runRoute($route, array $result)
 	{
 		$match = $this->runRouting( $route );
