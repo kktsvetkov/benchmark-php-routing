@@ -55,26 +55,6 @@ abstract class Benchmark
 		return array($longest);
 	}
 
-	/**
-	* @ParamProviders("getEachRoute")
-	*/
-	function benchAll(array $current)
-	{
-		$this->runRoute( $current['route'], $current['result'] );
-	}
-
-	function getEachRoute() : array
-	{
-		static $routes;
-		if (!$routes)
-		{
-			$routes = $this->getRoutes();
-		}
-
-		$current = array_pop($routes);
-		return array($current);
-	}
-
 	function runRoute($route, array $result)
 	{
 		$match = $this->runRouting( $route );
