@@ -91,7 +91,7 @@ class quick_benchmark
 				$data['scenario'],
 				$data['repeats'],
 				sprintf('%0.6f seconds', $data['time']),
-				$data['per_second']
+				sprintf('%0.6f', $data['per_second'])
 			]);
 
 		}
