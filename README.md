@@ -57,11 +57,11 @@ To run the benchmarks, first you have to run `composer update` to get all of the
 packages and their dependencies. After that, you can execute any of benchmark
 files like this:
 ```sh
-php vendor/bin/phpbench run benchmark/Symfony.php --report=aggregate
+php vendor/bin/phpbench run benchmark/Symfony/CompiledUrlMatcher_Benchmark.php --report=short
 ```
 Or you can run all of the benchmarks at once
 ```sh
-php vendor/bin/phpbench run --report=aggregate
+php vendor/bin/phpbench run --report=short
 ```
 
 ### Quick Benchmark
@@ -72,15 +72,20 @@ calculate the number of routes matched per second. The results are then sorted
 by that data. Here's how to run this:
 
 ```sh
-php scripts/quick-benchmark.php
+php quick.php
 ```
 
-# Routes: Bitbucket API
+# Route Providers
 
-All the routes for this benchmark are read from this address:
-https://api.bitbucket.org/swagger.json
+The routes used for the benchmarks are provided from real life APIs. There are
+several classes that help with reading, downloading and passing the routes.
 
 Only the paths are used, and the HTTP verbs/methods are ignored.
+
+## Route Provider: Bitbucket API
+
+The routes for this benchmark provider are read from this address:
+https://api.bitbucket.org/swagger.json
 
 You can see the list of paths in [routes/provider/bitbucket](routes/provider/bitbucket):
 
@@ -98,15 +103,6 @@ You can see the list of paths in [routes/provider/bitbucket](routes/provider/bit
 /repositories/{workspace}/{repo_slug}
 ...
 ```
-
-# Scripts
-
-There are a few scripts to assist with some of the grunt work:
-
-* [scripts/generate-routes.php](scripts/generate-routes.php):
-	generates the routes definitions for the packages, as well as the expected results
-* [scripts/quick-benchmark.php](scripts/quick-benchmark.php):
-	runs the benchmark cases to calculate number of matches per second (more is better)
 
 # Results
 
