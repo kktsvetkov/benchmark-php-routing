@@ -27,5 +27,32 @@ jobs:
       - name: Quick Benchmark
         run: php quick.php
 
-      - name: Run phpbench
-        run: vendor/bin/phpbench run --report=short
+      - name: Run Symfony UrlMatcher_Benchmark
+        run: vendor/bin/phpbench run benchmark/Symfony/UrlMatcher_Benchmark.php --report=short
+
+      - name: Run Symfony CompiledUrlMatcher_Benchmark Benchmark
+        run: vendor/bin/phpbench run benchmark/Symfony/CompiledUrlMatcher_Benchmark.php --report=short
+
+      - name: Run FastRoute CharCountBased_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/CharCountBased_Benchmark.php --report=short
+
+      - name: Run FastRoute CharCountBased_Cached_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/CharCountBased_Cached_Benchmark.php --report=short
+
+      - name: Run FastRoute GroupCountBased_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/GroupCountBased_Benchmark.php --report=short
+
+      - name: Run FastRoute GroupCountBased_Cached_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/GroupCountBased_Cached_Benchmark.php --report=short
+
+      - name: Run FastRoute GroupPosBased_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/GroupPosBased_Benchmark.php --report=short
+
+      - name: Run FastRoute GroupPosBased_Cached_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/GroupPosBased_Cached_Benchmark.php --report=short
+
+      - name: Run FastRoute MarkBased_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/MarkBased_Benchmark.php --report=short
+
+      - name: Run FastRoute MarkBased_Cached_Benchmark
+        run: vendor/bin/phpbench run benchmark/FastRoute/MarkBased_Cached_Benchmark.php --report=short
