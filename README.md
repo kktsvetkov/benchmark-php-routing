@@ -128,7 +128,7 @@ You can see the list of paths in [routes/provider/avatax](routes/provider/avatax
 
 # Results
 
-Here are the results from the benchmarks executed by Github Actions:
+Here are the results from the quick benchmarks executed by Github Actions:
 
 https://github.com/kktsvetkov/benchmark-php-routing/actions
 
