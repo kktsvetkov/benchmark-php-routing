@@ -112,144 +112,144 @@ https://github.com/kktsvetkov/benchmark-php-routing/actions
 
 ## PHP 7.3
 ```
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
-| Class                                      | Case         | Provider  | Repeats | Time             | Per Second  |
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
-| FastRoute\MarkBased_Cached_Benchmark       | benchSetup   | bitbucket | 178     | 0.078344 seconds | 2272.034863 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchSetup   | bitbucket | 178     | 0.079593 seconds | 2236.379167 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchSetup   | bitbucket | 178     | 0.081616 seconds | 2180.940550 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchAll     | bitbucket | 178     | 0.084616 seconds | 2103.622412 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchLongest | bitbucket | 178     | 0.084656 seconds | 2102.627099 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchSetup   | bitbucket | 178     | 0.085309 seconds | 2086.537619 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchAll     | bitbucket | 178     | 0.086050 seconds | 2068.569712 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchLast    | bitbucket | 178     | 0.086354 seconds | 2061.282215 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchAll     | bitbucket | 178     | 0.086965 seconds | 2046.798458 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchLast    | bitbucket | 178     | 0.087645 seconds | 2030.918941 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchAll     | bitbucket | 178     | 0.089645 seconds | 1985.611923 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchLongest | bitbucket | 178     | 0.089892 seconds | 1980.150681 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchLongest | bitbucket | 178     | 0.089895 seconds | 1980.087660 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchLast    | bitbucket | 178     | 0.090841 seconds | 1959.466457 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchLongest | bitbucket | 178     | 0.092148 seconds | 1931.673757 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchLast    | bitbucket | 178     | 0.095799 seconds | 1858.057569 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchLongest | bitbucket | 178     | 0.155997 seconds | 1141.049051 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchSetup   | bitbucket | 178     | 0.156661 seconds | 1136.211066 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchLast    | bitbucket | 178     | 0.160118 seconds | 1111.679421 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchAll     | bitbucket | 178     | 0.171021 seconds | 1040.807947 |
-| Symfony\UrlMatcher_Benchmark               | benchSetup   | bitbucket | 178     | 0.409891 seconds | 434.261908  |
-| Symfony\UrlMatcher_Benchmark               | benchAll     | bitbucket | 178     | 0.438629 seconds | 405.809782  |
-| FastRoute\CharCountBased_Benchmark         | benchAll     | bitbucket | 178     | 0.981267 seconds | 181.398136  |
-| FastRoute\CharCountBased_Benchmark         | benchLongest | bitbucket | 178     | 0.986302 seconds | 180.472082  |
-| FastRoute\GroupCountBased_Benchmark        | benchAll     | bitbucket | 178     | 0.988095 seconds | 180.144614  |
-| FastRoute\MarkBased_Benchmark              | benchLast    | bitbucket | 178     | 1.004363 seconds | 177.226791  |
-| FastRoute\GroupCountBased_Benchmark        | benchSetup   | bitbucket | 178     | 1.005348 seconds | 177.053084  |
-| FastRoute\CharCountBased_Benchmark         | benchSetup   | bitbucket | 178     | 1.005444 seconds | 177.036248  |
-| FastRoute\MarkBased_Benchmark              | benchLongest | bitbucket | 178     | 1.013495 seconds | 175.629880  |
-| FastRoute\GroupCountBased_Benchmark        | benchLast    | bitbucket | 178     | 1.027954 seconds | 173.159482  |
-| FastRoute\GroupCountBased_Benchmark        | benchLongest | bitbucket | 178     | 1.028760 seconds | 173.023842  |
-| FastRoute\MarkBased_Benchmark              | benchSetup   | bitbucket | 178     | 1.031144 seconds | 172.623780  |
-| FastRoute\GroupPosBased_Benchmark          | benchSetup   | bitbucket | 178     | 1.031581 seconds | 172.550650  |
-| FastRoute\GroupPosBased_Benchmark          | benchAll     | bitbucket | 178     | 1.038712 seconds | 171.366072  |
-| FastRoute\GroupPosBased_Benchmark          | benchLongest | bitbucket | 178     | 1.044326 seconds | 170.444850  |
-| FastRoute\CharCountBased_Benchmark         | benchLast    | bitbucket | 178     | 1.046004 seconds | 170.171463  |
-| FastRoute\GroupPosBased_Benchmark          | benchLast    | bitbucket | 178     | 1.067736 seconds | 166.707852  |
-| FastRoute\MarkBased_Benchmark              | benchAll     | bitbucket | 178     | 1.070176 seconds | 166.327762  |
-| Symfony\UrlMatcher_Benchmark               | benchLongest | bitbucket | 178     | 1.393380 seconds | 127.746902  |
-| Symfony\UrlMatcher_Benchmark               | benchLast    | bitbucket | 178     | 2.211703 seconds | 80.480966   |
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
++--------------------------------------------+--------------+-----------------+---------+------------+
+| Benchmark                                  | Case         | Provider Routes | Seconds | Per Second |
++--------------------------------------------+--------------+-----------------+---------+------------+
+| FastRoute\MarkBased_Cached_Benchmark       | benchSetup   | 178 (bitbucket) | 0.06634 | 2682.94616 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchSetup   | 178 (bitbucket) | 0.06851 | 2598.12257 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchSetup   | 178 (bitbucket) | 0.06903 | 2578.66744 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchAll     | 178 (bitbucket) | 0.06916 | 2573.55631 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchLongest | 178 (bitbucket) | 0.07096 | 2508.63088 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchSetup   | 178 (bitbucket) | 0.07118 | 2500.70712 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchAll     | 178 (bitbucket) | 0.07192 | 2474.99962 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchLast    | 178 (bitbucket) | 0.07202 | 2471.43565 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchAll     | 178 (bitbucket) | 0.07217 | 2466.47145 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchLongest | 178 (bitbucket) | 0.07424 | 2397.69190 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchAll     | 178 (bitbucket) | 0.07424 | 2397.66110 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchLongest | 178 (bitbucket) | 0.07447 | 2390.19225 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchLast    | 178 (bitbucket) | 0.07545 | 2359.09057 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchLast    | 178 (bitbucket) | 0.07597 | 2343.06157 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchLongest | 178 (bitbucket) | 0.07657 | 2324.58234 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchLast    | 178 (bitbucket) | 0.07768 | 2291.59654 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchSetup   | 178 (bitbucket) | 0.13873 | 1283.08501 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchLast    | 178 (bitbucket) | 0.14057 | 1266.25652 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchLongest | 178 (bitbucket) | 0.14136 | 1259.19810 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchAll     | 178 (bitbucket) | 0.14252 | 1248.93750 |
+| Symfony\UrlMatcher_Benchmark               | benchSetup   | 178 (bitbucket) | 0.36063 | 493.580629 |
+| Symfony\UrlMatcher_Benchmark               | benchAll     | 178 (bitbucket) | 0.39131 | 454.882345 |
+| FastRoute\MarkBased_Benchmark              | benchSetup   | 178 (bitbucket) | 0.82803 | 214.969142 |
+| FastRoute\MarkBased_Benchmark              | benchLongest | 178 (bitbucket) | 0.83322 | 213.628502 |
+| FastRoute\GroupPosBased_Benchmark          | benchSetup   | 178 (bitbucket) | 0.83924 | 212.097664 |
+| FastRoute\CharCountBased_Benchmark         | benchAll     | 178 (bitbucket) | 0.84339 | 211.052776 |
+| FastRoute\MarkBased_Benchmark              | benchAll     | 178 (bitbucket) | 0.84361 | 210.998974 |
+| FastRoute\GroupPosBased_Benchmark          | benchAll     | 178 (bitbucket) | 0.84673 | 210.219490 |
+| FastRoute\CharCountBased_Benchmark         | benchLast    | 178 (bitbucket) | 0.84752 | 210.024514 |
+| FastRoute\MarkBased_Benchmark              | benchLast    | 178 (bitbucket) | 0.84879 | 209.709073 |
+| FastRoute\GroupPosBased_Benchmark          | benchLongest | 178 (bitbucket) | 0.85147 | 209.050934 |
+| FastRoute\CharCountBased_Benchmark         | benchSetup   | 178 (bitbucket) | 0.85227 | 208.855197 |
+| FastRoute\GroupPosBased_Benchmark          | benchLast    | 178 (bitbucket) | 0.85244 | 208.813314 |
+| FastRoute\CharCountBased_Benchmark         | benchLongest | 178 (bitbucket) | 0.85774 | 207.522110 |
+| FastRoute\GroupCountBased_Benchmark        | benchLongest | 178 (bitbucket) | 0.85956 | 207.082230 |
+| FastRoute\GroupCountBased_Benchmark        | benchSetup   | 178 (bitbucket) | 0.86573 | 205.605855 |
+| FastRoute\GroupCountBased_Benchmark        | benchLast    | 178 (bitbucket) | 0.87033 | 204.520102 |
+| FastRoute\GroupCountBased_Benchmark        | benchAll     | 178 (bitbucket) | 0.87985 | 202.306957 |
+| Symfony\UrlMatcher_Benchmark               | benchLongest | 178 (bitbucket) | 1.16875 | 152.299459 |
+| Symfony\UrlMatcher_Benchmark               | benchLast    | 178 (bitbucket) | 1.88858 | 94.2509168 |
++--------------------------------------------+--------------+-----------------+---------+------------+
 ```
 
 ## PHP 7.4
 ```
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
-| Class                                      | Case         | Provider  | Repeats | Time             | Per Second  |
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
-| FastRoute\MarkBased_Cached_Benchmark       | benchSetup   | bitbucket | 178     | 0.065412 seconds | 2721.211381 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchAll     | bitbucket | 178     | 0.067657 seconds | 2630.917956 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchSetup   | bitbucket | 178     | 0.067928 seconds | 2620.418699 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchSetup   | bitbucket | 178     | 0.068302 seconds | 2606.076229 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchLongest | bitbucket | 178     | 0.069330 seconds | 2567.423148 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchSetup   | bitbucket | 178     | 0.069709 seconds | 2553.470000 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchLast    | bitbucket | 178     | 0.070297 seconds | 2532.113645 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchAll     | bitbucket | 178     | 0.070483 seconds | 2525.432765 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchAll     | bitbucket | 178     | 0.070509 seconds | 2524.501961 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchAll     | bitbucket | 178     | 0.072330 seconds | 2460.942968 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchLongest | bitbucket | 178     | 0.072880 seconds | 2442.370026 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchLongest | bitbucket | 178     | 0.072978 seconds | 2439.090574 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchLongest | bitbucket | 178     | 0.073903 seconds | 2408.559844 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchLast    | bitbucket | 178     | 0.073917 seconds | 2408.101487 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchLast    | bitbucket | 178     | 0.074947 seconds | 2375.015467 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchLast    | bitbucket | 178     | 0.075060 seconds | 2371.432104 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchSetup   | bitbucket | 178     | 0.140612 seconds | 1265.893674 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchLast    | bitbucket | 178     | 0.143602 seconds | 1239.537965 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchLongest | bitbucket | 178     | 0.144256 seconds | 1233.916497 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchAll     | bitbucket | 178     | 0.145600 seconds | 1222.526797 |
-| Symfony\UrlMatcher_Benchmark               | benchSetup   | bitbucket | 178     | 0.328841 seconds | 541.295081  |
-| Symfony\UrlMatcher_Benchmark               | benchAll     | bitbucket | 178     | 0.343970 seconds | 517.486899  |
-| FastRoute\MarkBased_Benchmark              | benchAll     | bitbucket | 178     | 0.751313 seconds | 236.918577  |
-| FastRoute\MarkBased_Benchmark              | benchSetup   | bitbucket | 178     | 0.751613 seconds | 236.824035  |
-| FastRoute\GroupPosBased_Benchmark          | benchAll     | bitbucket | 178     | 0.753941 seconds | 236.092801  |
-| FastRoute\GroupPosBased_Benchmark          | benchSetup   | bitbucket | 178     | 0.755687 seconds | 235.547258  |
-| FastRoute\MarkBased_Benchmark              | benchLongest | bitbucket | 178     | 0.757336 seconds | 235.034414  |
-| FastRoute\CharCountBased_Benchmark         | benchAll     | bitbucket | 178     | 0.762074 seconds | 233.573120  |
-| FastRoute\CharCountBased_Benchmark         | benchSetup   | bitbucket | 178     | 0.764408 seconds | 232.859905  |
-| FastRoute\GroupPosBased_Benchmark          | benchLast    | bitbucket | 178     | 0.769351 seconds | 231.363836  |
-| FastRoute\CharCountBased_Benchmark         | benchLongest | bitbucket | 178     | 0.770408 seconds | 231.046432  |
-| FastRoute\MarkBased_Benchmark              | benchLast    | bitbucket | 178     | 0.771436 seconds | 230.738526  |
-| FastRoute\GroupPosBased_Benchmark          | benchLongest | bitbucket | 178     | 0.771940 seconds | 230.587872  |
-| FastRoute\GroupCountBased_Benchmark        | benchSetup   | bitbucket | 178     | 0.772669 seconds | 230.370362  |
-| FastRoute\GroupCountBased_Benchmark        | benchLongest | bitbucket | 178     | 0.784240 seconds | 226.971333  |
-| FastRoute\CharCountBased_Benchmark         | benchLast    | bitbucket | 178     | 0.784741 seconds | 226.826383  |
-| FastRoute\GroupCountBased_Benchmark        | benchLast    | bitbucket | 178     | 0.789077 seconds | 225.580001  |
-| FastRoute\GroupCountBased_Benchmark        | benchAll     | bitbucket | 178     | 0.790890 seconds | 225.062910  |
-| Symfony\UrlMatcher_Benchmark               | benchLongest | bitbucket | 178     | 1.066783 seconds | 166.856810  |
-| Symfony\UrlMatcher_Benchmark               | benchLast    | bitbucket | 178     | 1.749295 seconds | 101.755279  |
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
++--------------------------------------------+--------------+-----------------+---------+------------+
+| Benchmark                                  | Case         | Provider Routes | Seconds | Per Second |
++--------------------------------------------+--------------+-----------------+---------+------------+
+| FastRoute\MarkBased_Cached_Benchmark       | benchSetup   | 178 (bitbucket) | 0.07613 | 2338.22569 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchAll     | 178 (bitbucket) | 0.08012 | 2221.61220 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchSetup   | 178 (bitbucket) | 0.08021 | 2219.20186 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchSetup   | 178 (bitbucket) | 0.08027 | 2217.38272 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchSetup   | 178 (bitbucket) | 0.08178 | 2176.68031 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchAll     | 178 (bitbucket) | 0.08196 | 2171.86791 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchLongest | 178 (bitbucket) | 0.08232 | 2162.26909 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchLast    | 178 (bitbucket) | 0.08261 | 2154.67454 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchAll     | 178 (bitbucket) | 0.08311 | 2141.66371 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchLongest | 178 (bitbucket) | 0.08617 | 2065.61081 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchLast    | 178 (bitbucket) | 0.08666 | 2053.91026 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchAll     | 178 (bitbucket) | 0.08794 | 2024.01457 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchLongest | 178 (bitbucket) | 0.08807 | 2021.09961 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchLast    | 178 (bitbucket) | 0.08899 | 2000.24678 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchLast    | 178 (bitbucket) | 0.08918 | 1995.94204 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchLongest | 178 (bitbucket) | 0.09325 | 1908.80251 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchSetup   | 178 (bitbucket) | 0.16436 | 1082.96783 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchLast    | 178 (bitbucket) | 0.16636 | 1069.96784 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchLongest | 178 (bitbucket) | 0.16921 | 1051.95347 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchAll     | 178 (bitbucket) | 0.17628 | 1009.76937 |
+| Symfony\UrlMatcher_Benchmark               | benchSetup   | 178 (bitbucket) | 0.37880 | 469.901223 |
+| Symfony\UrlMatcher_Benchmark               | benchAll     | 178 (bitbucket) | 0.42232 | 421.483355 |
+| FastRoute\MarkBased_Benchmark              | benchSetup   | 178 (bitbucket) | 0.87831 | 202.661938 |
+| FastRoute\GroupPosBased_Benchmark          | benchSetup   | 178 (bitbucket) | 0.88262 | 201.671618 |
+| FastRoute\MarkBased_Benchmark              | benchAll     | 178 (bitbucket) | 0.88393 | 201.372984 |
+| FastRoute\MarkBased_Benchmark              | benchLast    | 178 (bitbucket) | 0.89192 | 199.570141 |
+| FastRoute\CharCountBased_Benchmark         | benchLast    | 178 (bitbucket) | 0.89406 | 199.092231 |
+| FastRoute\CharCountBased_Benchmark         | benchAll     | 178 (bitbucket) | 0.89433 | 199.030769 |
+| FastRoute\GroupPosBased_Benchmark          | benchAll     | 178 (bitbucket) | 0.89516 | 198.846930 |
+| FastRoute\GroupPosBased_Benchmark          | benchLast    | 178 (bitbucket) | 0.89643 | 198.565628 |
+| FastRoute\CharCountBased_Benchmark         | benchLongest | 178 (bitbucket) | 0.89938 | 197.913653 |
+| FastRoute\MarkBased_Benchmark              | benchLongest | 178 (bitbucket) | 0.90075 | 197.613065 |
+| FastRoute\GroupCountBased_Benchmark        | benchSetup   | 178 (bitbucket) | 0.90815 | 196.003489 |
+| FastRoute\GroupPosBased_Benchmark          | benchLongest | 178 (bitbucket) | 0.91043 | 195.511815 |
+| FastRoute\CharCountBased_Benchmark         | benchSetup   | 178 (bitbucket) | 0.91374 | 194.804603 |
+| FastRoute\GroupCountBased_Benchmark        | benchAll     | 178 (bitbucket) | 0.92081 | 193.307868 |
+| FastRoute\GroupCountBased_Benchmark        | benchLast    | 178 (bitbucket) | 0.92835 | 191.737641 |
+| FastRoute\GroupCountBased_Benchmark        | benchLongest | 178 (bitbucket) | 0.94425 | 188.509425 |
+| Symfony\UrlMatcher_Benchmark               | benchLongest | 178 (bitbucket) | 1.24781 | 142.650480 |
+| Symfony\UrlMatcher_Benchmark               | benchLast    | 178 (bitbucket) | 1.98743 | 89.5629092 |
++--------------------------------------------+--------------+-----------------+---------+------------+
 ```
 
 ## PHP 8.0
 ```
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
-| Class                                      | Case         | Provider  | Repeats | Time             | Per Second  |
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
-| FastRoute\MarkBased_Cached_Benchmark       | benchSetup   | bitbucket | 178     | 0.070189 seconds | 2536.009946 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchSetup   | bitbucket | 178     | 0.072320 seconds | 2461.283716 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchAll     | bitbucket | 178     | 0.072575 seconds | 2452.640142 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchSetup   | bitbucket | 178     | 0.072962 seconds | 2439.632552 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchLongest | bitbucket | 178     | 0.073775 seconds | 2412.739709 |
-| FastRoute\MarkBased_Cached_Benchmark       | benchLast    | bitbucket | 178     | 0.074683 seconds | 2383.408766 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchAll     | bitbucket | 178     | 0.075156 seconds | 2368.407884 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchSetup   | bitbucket | 178     | 0.075293 seconds | 2364.103065 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchAll     | bitbucket | 178     | 0.075790 seconds | 2348.597019 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchLongest | bitbucket | 178     | 0.077365 seconds | 2300.777249 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchLongest | bitbucket | 178     | 0.077727 seconds | 2290.064176 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchAll     | bitbucket | 178     | 0.077771 seconds | 2288.765380 |
-| FastRoute\GroupPosBased_Cached_Benchmark   | benchLast    | bitbucket | 178     | 0.078197 seconds | 2276.302090 |
-| FastRoute\GroupCountBased_Cached_Benchmark | benchLast    | bitbucket | 178     | 0.079188 seconds | 2247.812247 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchLongest | bitbucket | 178     | 0.079492 seconds | 2239.216446 |
-| FastRoute\CharCountBased_Cached_Benchmark  | benchLast    | bitbucket | 178     | 0.080400 seconds | 2213.924056 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchSetup   | bitbucket | 178     | 0.139863 seconds | 1272.673844 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchLast    | bitbucket | 178     | 0.142654 seconds | 1247.774841 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchLongest | bitbucket | 178     | 0.142868 seconds | 1245.904945 |
-| Symfony\CompiledUrlMatcher_Benchmark       | benchAll     | bitbucket | 178     | 0.144492 seconds | 1231.900839 |
-| Symfony\UrlMatcher_Benchmark               | benchSetup   | bitbucket | 178     | 0.332425 seconds | 535.459321  |
-| Symfony\UrlMatcher_Benchmark               | benchAll     | bitbucket | 178     | 0.343478 seconds | 518.228295  |
-| FastRoute\MarkBased_Benchmark              | benchAll     | bitbucket | 178     | 0.771896 seconds | 230.601048  |
-| FastRoute\MarkBased_Benchmark              | benchLongest | bitbucket | 178     | 0.772454 seconds | 230.434427  |
-| FastRoute\CharCountBased_Benchmark         | benchSetup   | bitbucket | 178     | 0.775360 seconds | 229.570748  |
-| FastRoute\MarkBased_Benchmark              | benchLast    | bitbucket | 178     | 0.776187 seconds | 229.326197  |
-| FastRoute\CharCountBased_Benchmark         | benchAll     | bitbucket | 178     | 0.778871 seconds | 228.535902  |
-| FastRoute\MarkBased_Benchmark              | benchSetup   | bitbucket | 178     | 0.781737 seconds | 227.698106  |
-| FastRoute\GroupPosBased_Benchmark          | benchSetup   | bitbucket | 178     | 0.783551 seconds | 227.170855  |
-| FastRoute\CharCountBased_Benchmark         | benchLast    | bitbucket | 178     | 0.783714 seconds | 227.123654  |
-| FastRoute\GroupPosBased_Benchmark          | benchLast    | bitbucket | 178     | 0.788668 seconds | 225.697022  |
-| FastRoute\CharCountBased_Benchmark         | benchLongest | bitbucket | 178     | 0.789773 seconds | 225.381221  |
-| FastRoute\GroupCountBased_Benchmark        | benchSetup   | bitbucket | 178     | 0.790632 seconds | 225.136344  |
-| FastRoute\GroupPosBased_Benchmark          | benchLongest | bitbucket | 178     | 0.791760 seconds | 224.815610  |
-| FastRoute\GroupPosBased_Benchmark          | benchAll     | bitbucket | 178     | 0.791839 seconds | 224.793204  |
-| FastRoute\GroupCountBased_Benchmark        | benchLast    | bitbucket | 178     | 0.798303 seconds | 222.972946  |
-| FastRoute\GroupCountBased_Benchmark        | benchAll     | bitbucket | 178     | 0.799618 seconds | 222.606293  |
-| FastRoute\GroupCountBased_Benchmark        | benchLongest | bitbucket | 178     | 0.801511 seconds | 222.080532  |
-| Symfony\UrlMatcher_Benchmark               | benchLongest | bitbucket | 178     | 0.993070 seconds | 179.242168  |
-| Symfony\UrlMatcher_Benchmark               | benchLast    | bitbucket | 178     | 1.614889 seconds | 110.224300  |
-+--------------------------------------------+--------------+-----------+---------+------------------+-------------+
++--------------------------------------------+--------------+-----------------+---------+------------+
+| Benchmark                                  | Case         | Provider Routes | Seconds | Per Second |
++--------------------------------------------+--------------+-----------------+---------+------------+
+| FastRoute\MarkBased_Cached_Benchmark       | benchSetup   | 178 (bitbucket) | 0.06158 | 2890.69706 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchSetup   | 178 (bitbucket) | 0.06360 | 2798.83378 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchAll     | 178 (bitbucket) | 0.06392 | 2784.64690 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchSetup   | 178 (bitbucket) | 0.06429 | 2768.91793 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchLast    | 178 (bitbucket) | 0.06486 | 2744.28732 |
+| FastRoute\MarkBased_Cached_Benchmark       | benchLongest | 178 (bitbucket) | 0.06539 | 2721.96539 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchAll     | 178 (bitbucket) | 0.06601 | 2696.72677 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchSetup   | 178 (bitbucket) | 0.06643 | 2679.35470 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchLongest | 178 (bitbucket) | 0.06802 | 2617.02927 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchAll     | 178 (bitbucket) | 0.06817 | 2611.04349 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchLast    | 178 (bitbucket) | 0.06900 | 2579.60297 |
+| FastRoute\GroupPosBased_Cached_Benchmark   | benchLongest | 178 (bitbucket) | 0.06920 | 2572.07565 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchLast    | 178 (bitbucket) | 0.07152 | 2488.95223 |
+| FastRoute\GroupCountBased_Cached_Benchmark | benchLast    | 178 (bitbucket) | 0.07294 | 2440.46990 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchAll     | 178 (bitbucket) | 0.08191 | 2173.03739 |
+| FastRoute\CharCountBased_Cached_Benchmark  | benchLongest | 178 (bitbucket) | 0.08217 | 2166.13990 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchSetup   | 178 (bitbucket) | 0.12477 | 1426.62583 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchLast    | 178 (bitbucket) | 0.12652 | 1406.86128 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchAll     | 178 (bitbucket) | 0.14771 | 1205.05744 |
+| Symfony\CompiledUrlMatcher_Benchmark       | benchLongest | 178 (bitbucket) | 0.15014 | 1185.55977 |
+| Symfony\UrlMatcher_Benchmark               | benchSetup   | 178 (bitbucket) | 0.29099 | 611.694605 |
+| Symfony\UrlMatcher_Benchmark               | benchAll     | 178 (bitbucket) | 0.37049 | 480.448739 |
+| FastRoute\GroupPosBased_Benchmark          | benchLongest | 178 (bitbucket) | 0.68259 | 260.772654 |
+| FastRoute\GroupPosBased_Benchmark          | benchSetup   | 178 (bitbucket) | 0.68405 | 260.214864 |
+| FastRoute\MarkBased_Benchmark              | benchLongest | 178 (bitbucket) | 0.68445 | 260.064307 |
+| FastRoute\MarkBased_Benchmark              | benchAll     | 178 (bitbucket) | 0.68485 | 259.911752 |
+| FastRoute\CharCountBased_Benchmark         | benchSetup   | 178 (bitbucket) | 0.69000 | 257.971795 |
+| FastRoute\MarkBased_Benchmark              | benchSetup   | 178 (bitbucket) | 0.69303 | 256.842740 |
+| FastRoute\GroupPosBased_Benchmark          | benchLast    | 178 (bitbucket) | 0.69314 | 256.801571 |
+| FastRoute\GroupCountBased_Benchmark        | benchLast    | 178 (bitbucket) | 0.69999 | 254.288988 |
+| FastRoute\GroupCountBased_Benchmark        | benchAll     | 178 (bitbucket) | 0.70410 | 252.803239 |
+| FastRoute\GroupCountBased_Benchmark        | benchLongest | 178 (bitbucket) | 0.70586 | 252.175369 |
+| FastRoute\MarkBased_Benchmark              | benchLast    | 178 (bitbucket) | 0.71268 | 249.762848 |
+| FastRoute\GroupPosBased_Benchmark          | benchAll     | 178 (bitbucket) | 0.72456 | 245.665681 |
+| FastRoute\GroupCountBased_Benchmark        | benchSetup   | 178 (bitbucket) | 0.75150 | 236.860550 |
+| FastRoute\CharCountBased_Benchmark         | benchLongest | 178 (bitbucket) | 0.77894 | 228.516245 |
+| FastRoute\CharCountBased_Benchmark         | benchLast    | 178 (bitbucket) | 0.79545 | 223.771574 |
+| FastRoute\CharCountBased_Benchmark         | benchAll     | 178 (bitbucket) | 0.80367 | 221.482844 |
+| Symfony\UrlMatcher_Benchmark               | benchLongest | 178 (bitbucket) | 1.06307 | 167.439425 |
+| Symfony\UrlMatcher_Benchmark               | benchLast    | 178 (bitbucket) | 1.42155 | 125.215157 |
++--------------------------------------------+--------------+-----------------+---------+------------+
 ```
