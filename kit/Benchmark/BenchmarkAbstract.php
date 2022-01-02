@@ -23,7 +23,7 @@ use function reset;
 * Benchmark routing the provider routes
 *
 * @Warmup(2)
-* @Revs(1000)
+* @Revs(500)
 * @Iterations(5)
 */
 abstract class BenchmarkAbstract
