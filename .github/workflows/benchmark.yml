@@ -28,4 +28,4 @@ jobs:
         run: php scripts/quick-benchmark.php
 
       - name: Run phpbench
-        run: vendor/bin/phpbench run --report=aggregate
+        run: vendor/bin/phpbench run --report=short
