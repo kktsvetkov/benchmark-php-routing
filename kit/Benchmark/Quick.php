@@ -12,6 +12,7 @@ use function get_class;
 use function microtime;
 use function shell_exec;
 use function sprintf;
+use function substr;
 
 /**
 * Quick benchmark to calculate routes matched per second
@@ -93,22 +94,22 @@ class Quick
 
 		$table = new Table($output);
 		$table->setHeaders([
-			'Class', 'Case', 'Provider',
-			'Repeats', 'Time', 'Per Second'
+			'Benchmark', 'Case',
+			'Provider Routes',
+			'Seconds', 'Per Second'
 			]);
 
 		foreach ($results as $data)
 		{
+			// $benchmark = substr($data['class'], 28, -10);
+			$benchmark = substr($data['class'], 28);
+
 			$table->addRow([
-				str_replace(
-					'Benchmark_Routing\\Benchmark\\', '',
-					$data['class']
-					),
+				$benchmark,
 				$data['case'],
-				$data['provider'],
-				$data['repeats'],
-				sprintf('%0.6f seconds', $data['time']),
-				sprintf('%0.6f', $data['per_second'])
+				$data['repeats'] . " ({$data['provider']})",
+				sprintf('%0.5f', $data['time']),
+				substr($data['per_second'], 0, 10)
 			]);
 		}
 

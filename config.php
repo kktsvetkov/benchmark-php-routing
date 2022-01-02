@@ -24,7 +24,7 @@ new Benchmark\Symfony\CompiledUrlMatcher_Benchmark;
 
 /*
 |--------------------------------------------------------------------------
-| FastRoute Benchmarks  
+| FastRoute Benchmarks
 |--------------------------------------------------------------------------
 */
 
