@@ -12,6 +12,7 @@ use Benchmark_Routing\Provider;
 */
 
 new Provider\Bitbucket;
+new Provider\Avatax;
 
 /*
 |--------------------------------------------------------------------------

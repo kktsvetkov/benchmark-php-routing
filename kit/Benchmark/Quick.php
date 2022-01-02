@@ -101,8 +101,8 @@ class Quick
 
 		foreach ($results as $data)
 		{
-			// $benchmark = substr($data['class'], 28, -10);
-			$benchmark = substr($data['class'], 28);
+			// $benchmark = substr($data['class'], 28);
+			$benchmark = substr($data['class'], 28, -10);
 
 			$table->addRow([
 				$benchmark,

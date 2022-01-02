@@ -8,8 +8,7 @@
 		{
 			"extends": "aggregate",
 			"cols": [
-				"benchmark", "subject",
-				"set", "revs", "its",
+				"benchmark", "subject", "set",
 				"best", "mean", "mode", "worst",
 				"stdev", "rstdev",
 				"diff"

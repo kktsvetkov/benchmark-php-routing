@@ -6,6 +6,7 @@ routing packages against it.
 The APIs used for this benchmark:
 
 * [Bitbucket API](https://api.bitbucket.org/swagger.json)
+* [Avalara Avatax API](https://rest.avatax.com/swagger/v2/swagger.json)
 
 You can read more about this here:
 
@@ -101,6 +102,27 @@ You can see the list of paths in [routes/provider/bitbucket](routes/provider/bit
 /repositories
 /repositories/{workspace}
 /repositories/{workspace}/{repo_slug}
+...
+```
+
+## Route Provider: Avatax API
+
+The routes for this benchmark provider are read from this address:
+https://rest.avatax.com/swagger/v2/swagger.json
+
+You can see the list of paths in [routes/provider/avatax](routes/provider/avatax):
+
+```
+/api/v2/accounts
+/api/v2/accounts/{id}
+/api/v2/accounts/{id}/activate
+/api/v2/accounts/{id}/audit
+/api/v2/accounts/{id}/configuration
+/api/v2/accounts/{id}/licensekey
+/api/v2/accounts/{id}/licensekey/{licensekeyname}
+/api/v2/accounts/{id}/licensekeys
+/api/v2/accounts/{id}/resetlicensekey
+/api/v2/addresses/resolve
 ...
 ```
 
