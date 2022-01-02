@@ -1,5 +1,5 @@
 {
-	"runner.bootstrap": "vendor/autoload.php",
+	"runner.bootstrap": "config.php",
 	"runner.path": "benchmark",
 	"runner.file_pattern": "*_Benchmark.php",
 	"report.generators":

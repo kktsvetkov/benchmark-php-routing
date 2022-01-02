@@ -2,7 +2,7 @@
 
 namespace Benchmark_Routing\Kit\Provider;
 
-use Benchmark_Routing\Kit\Provider\ProviderInterface;
+use Benchmark_Routing\Kit\Provider\ProviderAbstract;
 
 use function array_map;
 use function count;
@@ -14,18 +14,19 @@ use function sort;
 
 use const DIRECTORY_SEPARATOR;
 
-abstract class LocalAbstract implements ProviderInterface
+abstract class LocalAbstract extends ProviderAbstract
 {
 	const LOCAL = 'routes';
 
-	protected $api = array();
-
 	function __construct()
 	{
+		parent::__construct();
+
 		$txt = dirname(__FILE__, 3)
 			. DIRECTORY_SEPARATOR . 'routes'
 			. DIRECTORY_SEPARATOR . 'provider'
 			. DIRECTORY_SEPARATOR . static::LOCAL;
+
 		$this->load($txt);
 	}
 
@@ -43,13 +44,8 @@ abstract class LocalAbstract implements ProviderInterface
 		return true;
 	}
 
-	function count() : int
+	function name() : string
 	{
-		return count($this->api);
-	}
-
-	function getRoutes() : iterable
-	{
-		return $this->api;
+		return static::LOCAL;
 	}
 }

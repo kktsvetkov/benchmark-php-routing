@@ -1,11 +1,12 @@
 <?php
 
-namespace Benchmark_Routing;
+namespace Benchmark_Routing\Benchmark\FastRoute;
 
+use Benchmark_Routing\Benchmark\FastRoute\SimpleDispatcherAbstract;
 use FastRoute\DataGenerator;
 use FastRoute\Dispatcher;
 
-class FastRoute_Cached_CharCountBased_Benchmark extends FastRoute_Cached_Abstract
+class CharCountBased_Benchmark extends SimpleDispatcherAbstract
 {
 	protected $dataGeneratorClass = DataGenerator\CharCountBased::class;
 	protected $dispatcherClass = Dispatcher\CharCountBased::class;
