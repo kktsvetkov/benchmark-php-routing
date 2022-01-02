@@ -19,7 +19,7 @@ use function sprintf;
 class Quick
 {
 	/**
-	* @var array what bench cases to call for each benchmark 
+	* @var array what bench cases to call for each benchmark
 	*/
 	const benchCases = array(
 		'benchAll',
@@ -171,7 +171,7 @@ class Quick
 		// benchmark case params are per provider
 		//
 		$params = array( 0 => $providerName );
-		if ('benchLongest' == $case)
+		if ('benchLongest' == $benchCase)
 		{
 			foreach ($benchmark->getLongestRoute() as $name => $longest)
 			{
@@ -182,7 +182,7 @@ class Quick
 				}
 			}
 		} else
-		if ('benchLast' == $case)
+		if ('benchLast' == $benchCase)
 		{
 			foreach ($benchmark->getLastRoute() as $name => $last)
 			{
