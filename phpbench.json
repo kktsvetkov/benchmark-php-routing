@@ -2,6 +2,11 @@
 	"runner.bootstrap": "config.php",
 	"runner.path": "benchmark",
 	"runner.file_pattern": "*_Benchmark.php",
+	"runner.php_config": 
+	{
+		"opcache.enable": 1,
+		"opcache.enable_cli": 1
+	},
 	"report.generators":
 	{
 		"short":
