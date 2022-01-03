@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Matcher\Dumper\CompiledUrlMatcherDumper;
 use Symfony\Component\Routing\RequestContext;
 
 use function dirname;
+use function is_file;
 use function var_export;
 
 class CompiledUrlMatcher_Benchmark extends UrlMatcher_Benchmark
@@ -19,21 +20,27 @@ class CompiledUrlMatcher_Benchmark extends UrlMatcher_Benchmark
 	{
 		parent::setupProvider($provider);
 
-		$dumper = new CompiledUrlMatcherDumper(
-			include $this->getRoutesFilename(
-				$providerName = $provider->name()
-				)
-			);
-
+		$providerName = $provider->name();
 		$this->compiledRoutes[ $providerName ] = dirname(__FILE__, 3)
 			. "/routes/cache/symfony/{$providerName}.php";
 
-		$compiled = $dumper->getCompiledRoutes();
+		if (!is_file($this->compiledRoutes[ $providerName ]))
+		{
 
-		$this->writeFile(
-			$this->compiledRoutes[ $providerName ],
-			'<?php return ' . var_export($compiled, true) . ';'
-			);
+			$dumper = new CompiledUrlMatcherDumper(
+				include $this->getRoutesFilename(
+					$providerName
+					)
+				);
+
+			$compiled = $dumper->getCompiledRoutes();
+
+			$this->writeFile(
+				$this->compiledRoutes[ $providerName ],
+				'<?php return ' . var_export($compiled, true) . ';'
+				);
+		}
+
 	}
 
 	function setupRouting( $providerName )
