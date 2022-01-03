@@ -128,7 +128,10 @@ class Quick
 		{
 			foreach (self::benchCases as $benchCase)
 			{
-				$time = shell_exec("php {$this->script} \
+				$time = shell_exec("php \
+					-dopcache.enable=1 \
+				 	-dopcache.enable_cli=1 \
+					{$this->script} \
 					{$benchIndex} \
 					{$benchCase} \
 					{$providerName}");
